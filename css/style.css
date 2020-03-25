@@ -1,0 +1,695 @@
+/* General CSS */
+
+* {
+  font-family: "Didot" serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../font/roboto/Roboto-Light.ttf");
+  src: url("../font/roboto/Roboto-Light.woff") format("woff"),
+  url("../font/roboto/Roboto-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("../font/roboto/Roboto-Bold.ttf");
+  src: url("../font/roboto/Roboto-Bold.woff") format("woff"),
+  url("../font/roboto/Roboto-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Roboto Thin";
+  src: url("../font/roboto/Roboto-Thin.ttf");
+  src: url("../font/roboto/Roboto-Thin.woff") format("woff"),
+  url("../font/roboto/Roboto-Thin.otf") format("opentype");
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+body {
+  background-image: url("../assets/splatter.jpg");
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+h1 {
+  position: relative;
+  margin-left: 10%;
+  font-size: 5vw;
+  font-weight: bold;
+  font-family: "Roboto";
+  color: #311111;
+}
+
+#parallaxWrapper {
+  height: 100vh;
+  perspective: 2px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.section {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.parallax::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  background-size: 100%;
+  z-index: -1;
+}
+
+/* Navigation Content */
+
+#navHeader {
+  height: 6vh;
+  width: 10vh;
+  z-index: 3;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  margin: 2% 0 0 2%;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#navHeader input {
+  height: auto;
+  width: 100%;
+  opacity: 100%;
+  position: absolute;
+  transition: 1s ease;
+}
+
+#navHeader input:focus {
+  outline: none;
+}
+
+#navHeader:hover {
+  cursor: pointer;
+}
+
+#stick1 {
+  transform: rotate(0deg) translate(0, 0) scale(1, 1.4);
+}
+
+#stick2 {
+  transform: rotate(180deg) translate(0, -5vh) scale(1, 1.4);
+}
+
+#menuLabel {
+  align-self: center;
+  font-family: "Roboto Bold";
+  font-size: 2.5vh;
+}
+
+#nav {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Roboto Bold";
+  background-color: #311111;
+  overflow: hidden;
+  z-index: 2;
+  visibility: hidden;
+}
+
+#linkBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  bottom: 5vh;
+  width: 100vw;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+}
+
+#left {
+  text-align: right;
+}
+
+#line {
+  background-color: white;
+  margin: 5% 0 5% 0;
+  max-height: 28vw;
+  width: 4px;
+}
+
+#right {
+  text-align: left;
+}
+
+#nav a {
+  font-size: 6vw;
+  text-decoration-line: none;
+  color: white;
+}
+
+#nav a:hover {
+  color: #E4D9B8;
+}
+
+@media only screen and (max-width: 812px) {
+  #nav {
+    overflow: scroll;
+}
+
+  #linkBar {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    bottom: auto;
+    padding: 0;
+    width: auto;
+  }
+  .column {
+    margin: 0
+  }
+  #left {
+    text-align: center;
+    margin: 0;
+  }
+  #right {
+    text-align: center;
+    margin: 0;
+  }
+  #line {
+    visibility: hidden;
+    position: absolute;
+  }
+  #nav a {
+    font-size: 14vw;
+  }
+}
+
+/* Front Page */
+
+#frontPage {
+  height: 175vh;
+}
+
+#frontPage #bigLogo {
+  -webkit-filter: drop-shadow(8px 8px 8px black);
+  filter: drop-shadow(8px 8px 8px black);
+  height: auto;
+  width: 65%;
+}
+
+#frontPage .firstContent p {
+  -webkit-filter: drop-shadow(5px 5px 5px black);
+  filter: drop-shadow(5px 5px 5px black);
+  color: white;
+  margin-top: 2%;
+  font-size: 2vw;
+}
+
+.bg1::after {
+  background: radial-gradient(circle, #311111 50%, black 125%);
+}
+
+#frontWrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+}
+
+.firstContent {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+#stickOverlay img {
+  position: absolute;
+}
+
+#panel1 {
+  left: 0;
+  height: 100vh;
+  width: auto;
+}
+
+#panel2 {
+  right: 0;
+  height: 100vh;
+  width: auto;
+}
+
+@keyframes float {
+  #firstSection {
+    height: 120vh;
+  }
+
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.downArrow {
+  animation: float 4s ease-in-out infinite;
+  position: absolute;
+  height: 10vh;
+  bottom: 15vh;
+  z-index: 1;
+}
+
+.downArrow img {
+  -webkit-filter: drop-shadow(5px 5px 5px black);
+  filter: drop-shadow(5px 5px 5px black);
+  height: 100%;
+  width: auto;
+}
+
+/* @media only screen and (max-width: 812px) {
+  #panel1 {
+  }
+
+  #panel3 {
+  }
+} */
+
+/* About Page */
+
+.bg2::after {
+  background-image: url("../assets/splatter.jpg");
+}
+
+#aboutWrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.aboutRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 10% 2% 10%;
+}
+
+.bar {
+  background-color: #311111;
+  width: 60vw;
+  height: 5px;
+}
+
+#row2 {
+  background-color: #311111;
+  color: white;
+}
+
+#text2 {
+  text-align: right;
+}
+
+.textBox {
+  font-family: "Roboto";
+  display: block;
+  max-width: 45%;
+  max-height: 100%;
+}
+
+.grow {
+  transition: 1s ease;
+  transition-delay: 0.2s;
+}
+
+.grow:hover{
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(100%);
+  transform: translate(0, -10px);
+  transition: 1s ease;
+}
+
+#sunset {
+  max-height: 30vw;
+}
+
+#starwars {
+  max-height: 20vw;
+}
+
+#tickets {
+  position: absolute;
+  transform: translate(100%, -20%) rotate(-5deg);
+  right: 0;
+  height: auto;
+  width: 75vw;
+}
+
+#about img {
+  height: auto;
+  max-width: 45%;
+}
+
+#about p {
+  font-size: 2.5vw;
+}
+
+/* Join Page */
+
+#joinWrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.joinRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 120%;
+  padding: 2% 10% 2% 10%;
+}
+
+#auditionInfo {
+  padding: 2% 2% 0 2%;
+  max-width: 50vw;
+}
+
+#auditionInfo a:hover {
+  color: #E4D9B8;
+}
+
+#faq {
+  padding: 2%;
+  max-width: 50vw;
+  background-color: #311111;
+  color: white;
+}
+
+#faq a {
+  color: #E4D9B8;
+}
+
+#join h3 {
+  padding: 2% 2% 2% 0;
+  font-size: 2vw;
+}
+
+#join h4 {
+  padding-top: 2%;
+  font-size: 1.6vw;
+}
+
+#join p {
+  padding: 2%;
+  font-size: 1.5vw;
+}
+
+#join ol {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 1.5vw;
+}
+
+#join a {
+  text-decoration-line: none;
+}
+
+#join img {
+  max-width: 100%;
+  margin-top: 2%;
+}
+
+/* Watch Page */
+
+#watch {
+  box-sizing: border-box;
+}
+
+#watchWrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  font-family: "Roboto";
+  width: 100vw;
+}
+
+/* Slideshow css from https://www.w3schools.com/howto/howto_js_slideshow.asp */
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100vw;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+/* .text {
+  color: white;
+  font-size: 15px;
+  padding: 12px 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+} */
+
+/* Number text (1/5 etc) */
+.numbertext {
+  color: white;
+  font-size: 12px;
+  padding: 12px 12px;
+  position: absolute;
+  bottom: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+#watch iframe {
+  height: 33.75vw;
+  width: 60vw;
+}
+
+@media only screen and (max-width: 812px) {
+  #watch iframe {
+    height: 45vw;
+    width: 80vw;
+  }
+}
+
+/* Contact Page */
+
+#contactTitle {
+  margin-bottom: 2%;
+}
+
+#contactWrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5vh;
+  padding-bottom: 2vh;
+}
+
+#fifthSection.section.parallax.bg2::after {
+  transform: translateZ(0) scale(1);
+}
+
+#contact .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contactCard {
+  background-color: white;
+  border-radius: 5%;
+  padding: 20px;
+  margin: 0.5em;
+  height: 300px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+  transition: 1s ease;
+}
+
+.contactCard img {
+  border-radius: 100%;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.contactCard:hover{
+  box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.3);
+  transition: 1s ease;
+}
+
+.contactCard p {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 1%;
+}
+
+.contactCard h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.contactCard h4 {
+  font-size: 20px;
+}
+
+/* Footer */
+
+.socialBubbles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.socialBubbles img {
+  height: 25vh;
+  width: auto;
+  margin: 20px;
+}
+
+#facebook {
+  animation: float 8s ease-in-out infinite;
+}
+
+#instagram {
+  animation: float 6s ease-in-out infinite;
+}
+
+#twitter {
+  animation: float 4s ease-in-out infinite;
+}
+
+footer {
+  text-align: left;
+  padding-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+footer h3 {
+  animation: float 5s ease-in-out infinite;
+}
+
+footer .socialBubbles {
+  margin-left: 10px;
+}
+
+footer .socialBubbles img {
+  height: 4vh;
+  width: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
