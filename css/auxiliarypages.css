@@ -288,6 +288,70 @@ h1 {
   background-color: white;
 }
 
+/* COVID-19 */
+
+#covid {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  padding: 2%;
+}
+
+#covid h2 {
+  text-align: center;
+}
+
+#covid em {
+  display: inline-block;
+  font-style: normal;
+}
+
+#covid a {
+  text-decoration-line: none;
+  color: maroon;
+}
+
+#covid p {
+  margin-top: 2%;
+}
+
+#covid .textBox {
+  font-family: "Roboto";
+  color: white;
+  box-sizing: border-box;
+  max-width: 75vw;
+  margin-top: 2%;
+  padding: 2%;
+  border: 1vw double white;
+  background-color: #311111;
+}
+
+#covid #covidBanner {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  padding: 0;
+  border: 0;
+}
+
+#covidBanner {
+  max-width: 75vw;
+  position: fixed;
+  right: 1vw;
+  text-align: center;
+  align-self: center;
+  font-family: "Roboto Bold";
+  font-size: 2vh;
+  color: white;
+  background-color: #FF3333;
+  text-decoration: none;
+  padding: 1% 2% 1% 2%;
+  border-radius: 5px;
+  align-items: center;
+}
+
+/*********************/
+
 /* Footer */
 
 @keyframes float {

@@ -53,6 +53,38 @@ h1 {
   color: #311111;
 }
 
+/*REMOVE AFTER COVID*/
+
+#covidBanner {
+  max-width: 75vw;
+  position: fixed;
+  right: 1vw;
+  text-align: center;
+  align-self: center;
+  font-family: "Roboto Bold";
+  font-size: 2vh;
+  color: white;
+  background-color: #FF3333;
+  text-decoration: none;
+  padding: 1% 2% 1% 2%;
+  border-radius: 5px;
+  align-items: center;
+}
+
+#covidBanner img {
+  height: 100%;
+  width: auto;
+}
+
+#bannerText {
+  font-family: "Roboto Bold";
+  font-size: 2vh;
+  color: white;
+  text-decoration: none;
+}
+
+/*********************/
+
 #parallaxWrapper {
   height: 100vh;
   perspective: 2px;
@@ -94,7 +126,7 @@ h1 {
   opacity: 0;
 }
 
-#navHeader input {
+#navHeader img {
   height: auto;
   width: 100%;
   opacity: 100%;
@@ -102,9 +134,9 @@ h1 {
   transition: 1s ease;
 }
 
-#navHeader input:focus {
+/* #navHeader input:focus {
   outline: none;
-}
+} */
 
 #navHeader:hover {
   cursor: pointer;
@@ -217,10 +249,12 @@ h1 {
 }
 
 #frontPage #bigLogo {
+  position: relative;
   -webkit-filter: drop-shadow(8px 8px 8px black);
   filter: drop-shadow(8px 8px 8px black);
   height: auto;
   width: 65%;
+  z-index: 1;
 }
 
 #frontPage .firstContent p {
@@ -299,14 +333,6 @@ h1 {
   height: 100%;
   width: auto;
 }
-
-/* @media only screen and (max-width: 812px) {
-  #panel1 {
-  }
-
-  #panel3 {
-  }
-} */
 
 /* About Page */
 

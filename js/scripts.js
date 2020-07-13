@@ -91,7 +91,9 @@ function toggleNav() {
   var stick1 = document.getElementById('stick1');
   var stick2 = document.getElementById('stick2');
   var label = document.getElementById('menuLabel');
+  var banner = document.getElementById('covidBanner');
   if (nav.style.visibility == 'hidden') {
+    banner.style.visibility = 'hidden';
     nav.style.visibility = 'visible';
     label.style.transitionDelay = '0s';
     label.style.opacity = 0;
@@ -102,6 +104,7 @@ function toggleNav() {
     stick2.style.transform = 'rotate(225deg) translate(-2.5vh, -2.5vh) scale(1, 1.4)';
   }
   else {
+    banner.style.visibility = 'visible';
     nav.style.visibility = 'hidden';
     document.getElementById('navHeader').style.opacity = '1';
     label.style.transitionDelay = '1s';
