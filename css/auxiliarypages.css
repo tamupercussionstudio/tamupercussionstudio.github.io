@@ -308,7 +308,7 @@ h1 {
 
 #covid a {
   text-decoration-line: none;
-  color: maroon;
+  color: #E4D9B8;
 }
 
 #covid p {
@@ -338,16 +338,27 @@ h1 {
   max-width: 75vw;
   position: fixed;
   right: 1vw;
-  text-align: center;
-  align-self: center;
+  display: flex;
   font-family: "Roboto Bold";
   font-size: 2vh;
   color: white;
   background-color: #FF3333;
   text-decoration: none;
-  padding: 1% 2% 1% 2%;
+  padding: 1%;
   border-radius: 5px;
   align-items: center;
+  justify-content: space-between;
+}
+
+#covidBanner svg {
+  margin-right: 1%;
+}
+
+#bannerText {
+  font-family: "Roboto Bold";
+  font-size: 2vh;
+  color: white;
+  text-decoration: none;
 }
 
 /*********************/

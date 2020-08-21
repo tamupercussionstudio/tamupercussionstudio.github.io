@@ -1,4 +1,7 @@
+var bannerClosed;
 function init() {
+  document.getElementById('covidBanner').style.visibility='visible';
+  bannerClosed = false;
   var vidDefer = document.getElementsByTagName('iframe');
   for (var i=0; i<vidDefer.length; i++) {
     if(vidDefer[i].getAttribute('data-src')) {
@@ -7,6 +10,12 @@ function init() {
   }
 }
 window.onload = init;
+
+//Delete after COVID
+function closeBanner() {
+  document.getElementById('covidBanner').style.visibility = 'hidden';
+  bannerClosed = true;
+}
 
 //Stick overlay displacement to fit screen
 var panel1 = document.getElementById('panel1');
@@ -92,8 +101,8 @@ function toggleNav() {
   var stick2 = document.getElementById('stick2');
   var label = document.getElementById('menuLabel');
   var banner = document.getElementById('covidBanner');
+  var isVis = banner.style.visibility;
   if (nav.style.visibility == 'hidden') {
-    banner.style.visibility = 'hidden';
     nav.style.visibility = 'visible';
     label.style.transitionDelay = '0s';
     label.style.opacity = 0;
@@ -102,9 +111,9 @@ function toggleNav() {
     stick2.src = 'assets/drumstickWhite.png';
     stick1.style.transform = 'rotate(-45deg) translate(-2.5vh, 2.5vh) scale(1, 1.4)';
     stick2.style.transform = 'rotate(225deg) translate(-2.5vh, -2.5vh) scale(1, 1.4)';
+    banner.style.visibility = 'hidden';
   }
   else {
-    banner.style.visibility = 'visible';
     nav.style.visibility = 'hidden';
     document.getElementById('navHeader').style.opacity = '1';
     label.style.transitionDelay = '1s';
@@ -114,6 +123,7 @@ function toggleNav() {
     stick2.src = 'assets/drumstickBlack.png';
     stick1.style.transform = 'rotate(0deg) translate(0, 0) scale(1, 1.4)';
     stick2.style.transform = 'rotate(180deg) translate(0, -5vh) scale(1, 1.4)';
+    if (!bannerClosed) banner.style.visibility = 'visible';
   }
 }
 

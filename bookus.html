@@ -19,7 +19,14 @@
     <input type="image" id="stick1" src="assets/drumstickBlack.png">
     <input type="image" id="stick2" src="assets/drumstickBlack.png">
     <p id="menuLabel">MENU</p>
-    <a id="covidBanner" href="Fall2020.html">Click here for important updates regarding the Fall 2020 semester</a>
+    <div id="covidBanner">
+      <svg xmlns="http://www.w3.org/2000/svg" onclick="closeBanner();event.cancelBubble=true;"class="icon icon-tabler icon-tabler-x" width="4vh" height="4vh" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+      <a href="Fall2020.html" id="bannerText">Click here for important updates regarding the Fall 2020 semester</a>
+    </div>
   </div>
   <div id="nav">
     <div id="linkBar">

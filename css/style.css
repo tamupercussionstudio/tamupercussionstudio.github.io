@@ -59,21 +59,20 @@ h1 {
   max-width: 75vw;
   position: fixed;
   right: 1vw;
-  text-align: center;
-  align-self: center;
+  display: flex;
   font-family: "Roboto Bold";
   font-size: 2vh;
   color: white;
   background-color: #FF3333;
   text-decoration: none;
-  padding: 1% 2% 1% 2%;
+  padding: 1%;
   border-radius: 5px;
   align-items: center;
+  justify-content: space-between;
 }
 
-#covidBanner img {
-  height: 100%;
-  width: auto;
+#covidBanner svg {
+  margin-right: 1%;
 }
 
 #bannerText {
@@ -133,10 +132,6 @@ h1 {
   position: absolute;
   transition: 1s ease;
 }
-
-/* #navHeader input:focus {
-  outline: none;
-} */
 
 #navHeader:hover {
   cursor: pointer;
