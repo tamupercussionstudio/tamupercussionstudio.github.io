@@ -493,7 +493,13 @@ h1 {
   padding-top: 2vh;
   padding-bottom: 2vh;
   font-family: "Roboto";
+  font-weight: bolder;
+  font-size: 1.75vw;
   width: 100vw;
+}
+
+#watchWrapper a {
+  text-decoration: none;
 }
 
 /* Slideshow css from https://www.w3schools.com/howto/howto_js_slideshow.asp */
