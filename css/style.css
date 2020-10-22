@@ -436,9 +436,9 @@ h1 {
   max-width: 50vw;
 }
 
-#auditionInfo a:hover {
+/* #auditionInfo a:hover {
   color: #E4D9B8;
-}
+} */
 
 #faq {
   padding: 2%;
@@ -474,6 +474,10 @@ h1 {
 
 #join a {
   text-decoration-line: none;
+}
+
+#join a:hover{
+  text-decoration: underline;
 }
 
 #join img {

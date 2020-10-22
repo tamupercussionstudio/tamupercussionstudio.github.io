@@ -271,6 +271,10 @@ h1 {
   color: maroon;
 }
 
+#donate a:hover {
+  text-decoration: underline;
+}
+
 #donate p {
   margin-top: 2%;
 }
@@ -306,7 +310,7 @@ h1 {
 }
 
 #covid a {
-  text-decoration-line: none;
+  /* text-decoration-line: none; */
   color: #E4D9B8;
 }
 
