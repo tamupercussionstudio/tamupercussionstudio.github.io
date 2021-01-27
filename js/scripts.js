@@ -2,10 +2,12 @@ var bannerClosed;
 function init() {
   document.getElementById('covidBanner').style.visibility='visible';
   bannerClosed = false;
-  var vidDefer = document.getElementsByTagName('iframe');
-  for (var i=0; i<vidDefer.length; i++) {
-    if(vidDefer[i].getAttribute('data-src')) {
-      vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
+  if (window.location.href.includes("index.html")) {
+    var vidDefer = document.getElementsByTagName('iframe');
+    for (var i=0; i<vidDefer.length; i++) {
+      if(vidDefer[i].getAttribute('data-src')) {
+        vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
+      }
     }
   }
 }
@@ -17,40 +19,69 @@ function closeBanner() {
   bannerClosed = true;
 }
 
-//Stick overlay displacement to fit screen
-var panel1 = document.getElementById('panel1');
-var panel2 = document.getElementById('panel2');
-if (window.innerWidth < window.innerHeight) {
-  panel1.src = 'assets/stickOverlay3.png';
-  panel2.src = 'assets/stickOverlay4.png';
-  panel1.style.height = 'auto';
-  panel2.style.height = 'auto';
-  panel1.style.width = '100vw';
-  panel2.style.width = '100vw';
-  panel1.style.top = '0';
-  panel2.style.bottom = '0';
-}
-window.addEventListener("orientationchange", function(event) {
-  switch(window.orientation) {
-    case -90: case 90:
-      panel1.src = 'assets/stickOverlay1.png';
-      panel2.src = 'assets/stickOverlay2.png';
-      panel1.style.height = '100vh';
-      panel2.style.height = '100vh';
-      panel1.style.width = 'auto';
-      panel2.style.width = 'auto';
-      break;
-    default:
-      panel1.src = 'assets/stickOverlay3.png';
-      panel2.src = 'assets/stickOverlay4.png';
-      panel1.style.height = 'auto';
-      panel2.style.height = 'auto';
-      panel1.style.width = '100vw';
-      panel2.style.width = '100vw';
-      panel1.style.top = '0';
-      panel2.style.bottom = '0';
+if (window.location.href.includes("index.html")) {
+  //Stick overlay displacement to fit screen
+  var panel1 = document.getElementById('panel1');
+  var panel2 = document.getElementById('panel2');
+  if (window.innerWidth < window.innerHeight) {
+    panel1.src = 'assets/stickOverlay3.png';
+    panel2.src = 'assets/stickOverlay4.png';
+    panel1.style.height = 'auto';
+    panel2.style.height = 'auto';
+    panel1.style.width = '100vw';
+    panel2.style.width = '100vw';
+    panel1.style.top = '0';
+    panel2.style.bottom = '0';
   }
-});
+  window.addEventListener("orientationchange", function(event) {
+    switch(window.orientation) {
+      case -90: case 90:
+        panel1.src = 'assets/stickOverlay1.png';
+        panel2.src = 'assets/stickOverlay2.png';
+        panel1.style.height = '100vh';
+        panel2.style.height = '100vh';
+        panel1.style.width = 'auto';
+        panel2.style.width = 'auto';
+        break;
+      default:
+        panel1.src = 'assets/stickOverlay3.png';
+        panel2.src = 'assets/stickOverlay4.png';
+        panel1.style.height = 'auto';
+        panel2.style.height = 'auto';
+        panel1.style.width = '100vw';
+        panel2.style.width = '100vw';
+        panel1.style.top = '0';
+        panel2.style.bottom = '0';
+    }
+  });
+
+  //Watch Section slideshow code from https://www.w3schools.com/howto/howto_js_slideshow.asp
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName('mySlides');
+    var dots = document.getElementsByClassName('dot');
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(' active', '');
+    }
+    slides[slideIndex-1].style.display = 'block';
+    dots[slideIndex-1].className += ' active';
+  }
+}
 
 function scrollCheck() {
   var y = document.getElementById('parallaxWrapper').scrollTop;
@@ -125,31 +156,4 @@ function toggleNav() {
     stick2.style.transform = 'rotate(180deg) translate(0, -5vh) scale(1, 1.4)';
     if (!bannerClosed) banner.style.visibility = 'visible';
   }
-}
-
-//Watch Section slideshow code from https://www.w3schools.com/howto/howto_js_slideshow.asp
-var slideIndex = 1;
-showSlides(slideIndex);
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName('mySlides');
-  var dots = document.getElementsByClassName('dot');
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = 'none';
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(' active', '');
-  }
-  slides[slideIndex-1].style.display = 'block';
-  dots[slideIndex-1].className += ' active';
 }
