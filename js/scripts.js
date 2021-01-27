@@ -2,7 +2,7 @@ var bannerClosed;
 function init() {
   document.getElementById('covidBanner').style.visibility='visible';
   bannerClosed = false;
-  if (window.location.href.includes("index.html") || window.location.href.includes("#")) {
+  if (window.location.href == "https://www.tamupercussionstudio.com") {
     var vidDefer = document.getElementsByTagName('iframe');
     for (var i=0; i<vidDefer.length; i++) {
       if(vidDefer[i].getAttribute('data-src')) {
@@ -19,7 +19,7 @@ function closeBanner() {
   bannerClosed = true;
 }
 
-if (window.location.href.includes("index.html")) {
+if (window.location.href == "https://www.tamupercussionstudio.com") {
   //Stick overlay displacement to fit screen
   var panel1 = document.getElementById('panel1');
   var panel2 = document.getElementById('panel2');
