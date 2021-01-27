@@ -2,11 +2,7 @@ var bannerClosed;
 function init() {
   document.getElementById('covidBanner').style.visibility='visible';
   bannerClosed = false;
-<<<<<<< Updated upstream
-  if (window.location.href == "https://www.tamupercussionstudio.com/") {
-=======
   if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.location.href.includes('#') || window.location.href.includes('index.html')) {
->>>>>>> Stashed changes
     var vidDefer = document.getElementsByTagName('iframe');
     for (var i=0; i<vidDefer.length; i++) {
       if(vidDefer[i].getAttribute('data-src')) {
@@ -23,11 +19,7 @@ function closeBanner() {
   bannerClosed = true;
 }
 
-<<<<<<< Updated upstream
-if (window.location.href == "https://www.tamupercussionstudio.com/") {
-=======
 if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.location.href.includes('#') || window.location.href.includes('index.html')) {
->>>>>>> Stashed changes
   //Stick overlay displacement to fit screen
   var panel1 = document.getElementById('panel1');
   var panel2 = document.getElementById('panel2');
