@@ -2,7 +2,7 @@ var bannerClosed;
 function init() {
   document.getElementById('covidBanner').style.visibility='visible';
   bannerClosed = false;
-  if (window.location.href.includes("index.html")) {
+  if (window.location.href.includes("index.html") || window.location.href.includes("#")) {
     var vidDefer = document.getElementsByTagName('iframe');
     for (var i=0; i<vidDefer.length; i++) {
       if(vidDefer[i].getAttribute('data-src')) {
