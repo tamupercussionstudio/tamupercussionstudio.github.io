@@ -99,7 +99,7 @@ h1 {
   padding: 0;
 }
 
-.parallax::after {
+/* .parallax::after {
   content: " ";
   position: absolute;
   top: 0;
@@ -109,7 +109,7 @@ h1 {
   transform: translateZ(-1px) scale(1.5);
   background-size: 100%;
   z-index: -1;
-}
+} */
 
 /* Navigation Content */
 
@@ -206,7 +206,7 @@ h1 {
 @media only screen and (max-width: 812px) {
   #nav {
     overflow: scroll;
-}
+  }
 
   #linkBar {
     display: flex;
@@ -239,7 +239,7 @@ h1 {
 /* Front Page */
 
 #frontPage {
-  height: 175vh;
+  /* height: 175vh; */
 }
 
 #frontPage #bigLogo {
@@ -259,7 +259,7 @@ h1 {
   font-size: 2vw;
 }
 
-.bg1::after {
+.bg1 {
   background: radial-gradient(circle, #311111 50%, black 125%);
 }
 
