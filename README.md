@@ -7,6 +7,7 @@ This contains the website for Percussion Studio: the only percussion organizatio
 ## Authors
 
 * **Steven Clark** - *Initial work* - [spclark](https://github.com/spclark)
+* **Kunal Gupta** - *Maintenance* - [GunalKupta](https://github.com/GunalKupta)
 
 See also the list of [contributors](https://github.com/tamupercussionstudio/tamupercussionstudio.github.io/graphs/contributors) who participated in this project.
 
