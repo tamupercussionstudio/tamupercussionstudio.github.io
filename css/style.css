@@ -29,19 +29,33 @@
 }
 
 html {
-  overflow: scroll;
+  /* overflow: overlay; */
   overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  width: 7px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color:transparent;
+  border-radius: 2px;
+  /* display: none; */
+  /* display: initial; */
+  transition: background-color .2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color:rgba(0, 0, 0, 0.3);
 }
 
 body {
   background-image: url("../assets/splatter.jpg");
   overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 h1 {
@@ -88,7 +102,7 @@ h1 {
   height: 100vh;
   perspective: 2px;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: overlay;
 }
 
 .section {
