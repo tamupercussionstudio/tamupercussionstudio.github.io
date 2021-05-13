@@ -97,11 +97,11 @@ function scrollCheck() {
     document.getElementById('stickOverlay').style.opacity = ratio;
   }
   //Menu button opacity
-  if (y >= window.screen.height && y <= about) {
+  if (y >= window.screen.height && y < about) {
     document.getElementById('navHeader').style.visibility = 'visible';
     document.getElementById('navHeader').style.opacity = (y-window.screen.height) / (about-window.screen.height);
   }
-  else if (y > about) {
+  else if (y >= about) {
     document.getElementById('navHeader').style.visibility = 'visible';
     document.getElementById('navHeader').style.opacity = '1';
   }
