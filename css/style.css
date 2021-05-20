@@ -251,9 +251,9 @@ h1 {
 
 /* Front Page */
 
-#frontPage {
-  /* height: 175vh; */
-}
+/* #frontPage {
+  height: 175vh;
+} */
 
 #frontPage #bigLogo {
   position: relative;
