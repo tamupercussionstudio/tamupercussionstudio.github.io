@@ -41,13 +41,12 @@ html {
   background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background-color:transparent;
+  background-color: transparent;
   border-radius: 2px;
   /* display: none; */
   /* display: initial; */
-  transition: background-color .2s;
+  transition: background-color .2s ease;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background-color:rgba(0, 0, 0, 0.3);
 }
@@ -69,7 +68,7 @@ h1 {
 
 /*REMOVE AFTER COVID*/
 
-#covidBanner {
+/* #covidBanner {
   max-width: 75vw;
   position: fixed;
   right: 1vw;
@@ -83,7 +82,7 @@ h1 {
   border-radius: 5px;
   align-items: center;
   justify-content: space-between;
-}
+} */
 
 #covidBanner svg {
   margin-right: 1%;
