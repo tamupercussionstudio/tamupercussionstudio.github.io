@@ -10,23 +10,23 @@
 @font-face {
   font-family: "Roboto";
   src: url("../font/roboto/Roboto-Light.ttf");
-  src: url("../font/roboto/Roboto-Light.woff") format("woff"),
-  url("../font/roboto/Roboto-Light.otf") format("opentype");
+  src: url("../font/roboto/Roboto-Light.woff") format("woff");
+  /* url("../font/roboto/Roboto-Light.otf") format("opentype"); */
 }
 
 @font-face {
   font-family: "Roboto Bold";
   src: url("../font/roboto/Roboto-Bold.ttf");
-  src: url("../font/roboto/Roboto-Bold.woff") format("woff"),
-  url("../font/roboto/Roboto-Bold.otf") format("opentype");
+  src: url("../font/roboto/Roboto-Bold.woff") format("woff");
+  /* url("../font/roboto/Roboto-Bold.otf") format("opentype"); */
 }
 
-@font-face {
+/* @font-face {
   font-family: "Roboto Thin";
   src: url("../font/roboto/Roboto-Thin.ttf");
   src: url("../font/roboto/Roboto-Thin.woff") format("woff"),
   url("../font/roboto/Roboto-Thin.otf") format("opentype");
-}
+} */
 
 html {
   /* overflow: overlay; */
