@@ -337,7 +337,7 @@ h1 {
   border: 0;
 }
 
-#covidBanner {
+/* #covidBanner {
   max-width: 75vw;
   position: fixed;
   right: 1vw;
@@ -351,7 +351,7 @@ h1 {
   border-radius: 5px;
   align-items: center;
   justify-content: space-between;
-}
+} */
 
 #covidBanner svg {
   margin-right: 1%;
