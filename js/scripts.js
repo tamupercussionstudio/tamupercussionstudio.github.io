@@ -2,8 +2,8 @@
 function init() {
   // document.getElementById('covidBanner').style.visibility='hidden'; // 'visible';
   // bannerClosed = true;  // 'false';
-  var vidDefer = document.getElementsByTagName('iframe')[0];
-  vidDefer.setAttribute('src',vidDefer.getAttribute('data-src'));
+  // var vidDefer = document.getElementsByTagName('iframe')[0];
+  // vidDefer.setAttribute('src',vidDefer.getAttribute('data-src'));
 }
 window.onload = init;
 
