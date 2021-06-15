@@ -1,23 +1,17 @@
-var bannerClosed;
+// var bannerClosed;
 function init() {
-  document.getElementById('covidBanner').style.visibility='visible';
-  bannerClosed = false;
-  if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.location.href.includes('#') || window.location.href.includes('index.html')) {
-    var vidDefer = document.getElementsByTagName('iframe');
-    for (var i=0; i<vidDefer.length; i++) {
-      if(vidDefer[i].getAttribute('data-src')) {
-        vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
-      }
-    }
-  }
+  // document.getElementById('covidBanner').style.visibility='hidden'; // 'visible';
+  // bannerClosed = true;  // 'false';
+  var vidDefer = document.getElementsByTagName('iframe')[0];
+  vidDefer.setAttribute('src',vidDefer.getAttribute('data-src'));
 }
 window.onload = init;
 
 //Delete after COVID
-function closeBanner() {
-  document.getElementById('covidBanner').style.visibility = 'hidden';
-  bannerClosed = true;
-}
+// function closeBanner() {
+//   document.getElementById('covidBanner').style.visibility = 'hidden';
+//   bannerClosed = true;
+// }
 
 if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.location.href.includes('#') || window.location.href.includes('index.html')) {
   //Stick overlay displacement to fit screen
@@ -56,35 +50,48 @@ if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.lo
   });
 
   //Watch Section slideshow code from https://www.w3schools.com/howto/howto_js_slideshow.asp
-  var slideIndex = 1;
+  var slideIndex = 0;
   showSlides(slideIndex);
   // Next/previous controls
   function plusSlides(n) {
+    stopSlide(slideIndex)
     showSlides(slideIndex += n);
   }
   // Thumbnail image controls
   function currentSlide(n) {
+    stopSlide(slideIndex)
     showSlides(slideIndex = n);
+  }
+  function stopSlide(n) {
+    // Resetting src attribute stops video from playing
+    var curFrame = document.getElementsByTagName('iframe')[n];
+    curFrame.setAttribute('src', curFrame.getAttribute('src'));
   }
   function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName('mySlides');
+    var frames = document.getElementsByTagName('iframe');
     var dots = document.getElementsByClassName('dot');
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    if (n > slides.length-1) {slideIndex = 0}
+    if (n < 0) {slideIndex = slides.length-1}
+    
+    if (frames[slideIndex].getAttribute('src') == "") {
+      frames[slideIndex].setAttribute('src', frames[slideIndex].getAttribute('data-src'));
+    }
+
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(' active', '');
     }
-    slides[slideIndex-1].style.display = 'block';
-    dots[slideIndex-1].className += ' active';
+    slides[slideIndex].style.display = 'block';
+    dots[slideIndex].className += ' active';
   }
 }
 
 function scrollCheck() {
-  var y = document.getElementById('parallaxWrapper').scrollTop;
+  var y = Math.ceil(document.getElementById('parallaxWrapper').scrollTop);
   var about = document.getElementById('about').offsetTop;
   var join = document.getElementById('join').offsetTop;
   var r3 = document.getElementById('row3').offsetTop + about;
@@ -131,8 +138,8 @@ function toggleNav() {
   var stick1 = document.getElementById('stick1');
   var stick2 = document.getElementById('stick2');
   var label = document.getElementById('menuLabel');
-  var banner = document.getElementById('covidBanner');
-  var isVis = banner.style.visibility;
+  // var banner = document.getElementById('covidBanner');
+  // var isVis = banner.style.visibility;
   if (nav.style.visibility == 'hidden') {
     nav.style.visibility = 'visible';
     label.style.transitionDelay = '0s';
@@ -142,7 +149,7 @@ function toggleNav() {
     stick2.src = 'assets/drumstickWhite.png';
     stick1.style.transform = 'rotate(-45deg) translate(-2.5vh, 2.5vh) scale(1, 1.4)';
     stick2.style.transform = 'rotate(225deg) translate(-2.5vh, -2.5vh) scale(1, 1.4)';
-    banner.style.visibility = 'hidden';
+    // banner.style.visibility = 'hidden';
   }
   else {
     nav.style.visibility = 'hidden';
@@ -154,6 +161,6 @@ function toggleNav() {
     stick2.src = 'assets/drumstickBlack.png';
     stick1.style.transform = 'rotate(0deg) translate(0, 0) scale(1, 1.4)';
     stick2.style.transform = 'rotate(180deg) translate(0, -5vh) scale(1, 1.4)';
-    if (!bannerClosed) banner.style.visibility = 'visible';
+    // if (!bannerClosed) banner.style.visibility = 'visible';
   }
 }

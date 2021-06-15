@@ -530,6 +530,7 @@ h1 {
 /* Hide the images by default */
 .mySlides {
   display: none;
+  text-align: center;
 }
 
 /* Next & previous buttons */
