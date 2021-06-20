@@ -328,7 +328,7 @@ h1 {
 	}
 }
 
-.downArrow {
+#downArrow {
   animation: float 4s ease-in-out infinite;
   position: absolute;
   height: 10vh;
@@ -336,7 +336,7 @@ h1 {
   z-index: 1;
 }
 
-.downArrow img {
+#downArrow img {
   -webkit-filter: drop-shadow(5px 5px 5px black);
   filter: drop-shadow(5px 5px 5px black);
   height: 100%;

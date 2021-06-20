@@ -99,7 +99,7 @@ function scrollCheck() {
   if (y == 0)
     document.getElementById('stickOverlay').style.opacity = '1';
   else {
-    var limit = document.getElementById('bigLogo').offsetTop;
+    var limit = document.getElementById('downArrow').offsetTop;
     var ratio = 1 - (y/limit);
     document.getElementById('stickOverlay').style.opacity = ratio;
   }
