@@ -682,6 +682,10 @@ h1 {
   font-style: italic;
   margin-bottom: 1%;
 }
+.contactCard a {
+  color: black;
+  text-decoration-line: none;
+}
 
 .contactCard h3 {
   font-size: 20px;
