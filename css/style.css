@@ -53,8 +53,8 @@ html {
 
 body {
   /* background-image: url("../assets/splatter.jpg"); */
-  background: rgb(255,247,231);
-  background: linear-gradient(0deg, rgba(255,247,231,1) 0%, rgba(250,247,242,1) 25%);
+  background: rgb(255,242,215);
+  background: linear-gradient(0deg, rgba(255,242,215,1) 0%, rgba(250,247,242,1) 40%);
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
@@ -347,8 +347,8 @@ h1 {
 
 .bg2::after {
   /* background-image: url("../assets/splatter.jpg"); */
-  background: rgb(255,247,231);
-  background: linear-gradient(0deg, rgba(255,247,231,1) 0%, rgba(250,247,242,1) 25%);
+  background: rgb(255,242,215);
+  background: linear-gradient(0deg, rgba(255,242,215,1) 0%, rgba(250,247,242,1) 40%);
 }
 
 #aboutWrapper {
