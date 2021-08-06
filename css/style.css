@@ -449,13 +449,27 @@ h1 {
 }
 
 #auditionInfo {
-  padding: 2% 2% 0 2%;
+  padding: 0 2% 0 2%;
   max-width: 50vw;
 }
 
 /* #auditionInfo a:hover {
   color: #E4D9B8;
 } */
+
+#infoZoom {
+  padding: 2%;
+  /* margin: 3%; */
+  max-width: 50vw;
+  background-color: #311111;
+  color: white;
+}
+#join .subtext {
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 1.2vw;
+  font-style: italic;
+}
 
 #faq {
   padding: 2%;
@@ -464,7 +478,7 @@ h1 {
   color: white;
 }
 
-#faq a {
+#faq a, #infoZoom a {
   color: #E4D9B8;
 }
 
@@ -479,7 +493,7 @@ h1 {
 }
 
 #join p {
-  padding: 2%;
+  padding: 3% 2%;
   font-size: 1.5vw;
 }
 
