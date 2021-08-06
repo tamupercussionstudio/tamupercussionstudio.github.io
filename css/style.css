@@ -459,7 +459,7 @@ h1 {
 
 #infoZoom {
   padding: 2%;
-  /* margin: 3%; */
+  margin-bottom: 2%;
   max-width: 50vw;
   background-color: #311111;
   color: white;
@@ -493,7 +493,7 @@ h1 {
 }
 
 #join p {
-  padding: 3% 2%;
+  padding: 2%;
   font-size: 1.5vw;
 }
 
