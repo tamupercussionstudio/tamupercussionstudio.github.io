@@ -478,6 +478,10 @@ h1 {
   color: white;
 }
 
+#auditionWrapper a {
+  font-weight: bold;
+}
+
 #faq a, #infoZoom a {
   color: #E4D9B8;
 }
