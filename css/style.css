@@ -453,14 +453,10 @@ h1 {
   max-width: 50vw;
 }
 
-/* #auditionInfo a:hover {
-  color: #E4D9B8;
-} */
-
 #infoZoom {
   padding: 2%;
   margin-bottom: 2%;
-  max-width: 50vw;
+  max-width: 55vw;
   background-color: #311111;
   color: white;
 }
@@ -473,7 +469,6 @@ h1 {
 
 #faq {
   padding: 2%;
-  max-width: 50vw;
   background-color: #311111;
   color: white;
 }
@@ -516,7 +511,7 @@ h1 {
 }
 
 #join img {
-  max-width: 100%;
+  max-width: 90%;
   margin-top: 2%;
 }
 
