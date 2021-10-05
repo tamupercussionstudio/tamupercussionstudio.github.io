@@ -450,7 +450,7 @@ h1 {
 
 #auditionInfo {
   padding: 0 2% 0 2%;
-  max-width: 50vw;
+  /* max-width: 60%; */
 }
 
 #infoZoom {
@@ -460,6 +460,7 @@ h1 {
   background-color: #311111;
   color: white;
 }
+
 #join .subtext {
   margin-top: 0;
   padding-top: 0;
@@ -471,6 +472,19 @@ h1 {
   padding: 2%;
   background-color: #311111;
   color: white;
+  /* max-width: 60%; */
+}
+
+#join hr {
+  height: 2px;
+  margin: 3% auto;
+  border: none;
+}
+#auditionInfo hr {
+  background-color: #311111;
+}
+#faq hr {
+  background: linear-gradient(0deg, rgba(255,242,215,1) 0%, rgba(250,247,242,1) 40%);
 }
 
 #auditionWrapper a {
@@ -511,8 +525,14 @@ h1 {
 }
 
 #join img {
+  margin-top: 3%;
+}
+
+#auditionInfo img {
   max-width: 90%;
-  margin-top: 2%;
+}
+#faq img {
+  max-width: 85%;
 }
 
 /* Watch Page */
