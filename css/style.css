@@ -661,6 +661,9 @@ h1 {
     height: 45vw;
     width: 80vw;
   }
+  #join hr {
+    height: 1px;
+  }
 }
 
 /* Contact Page */
