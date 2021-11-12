@@ -62,7 +62,7 @@ body {
 h1 {
   position: relative;
   margin-left: 10%;
-  font-size: 5vw;
+  font-size: 5vmax;
   font-weight: bold;
   font-family: "Roboto";
   color: #311111;
@@ -247,7 +247,7 @@ h1 {
     position: absolute;
   }
   #nav a {
-    font-size: 14vw;
+    font-size: 8vh;
   }
 }
 
@@ -429,7 +429,7 @@ h1 {
 }
 
 #about p {
-  font-size: 2.5vw;
+  font-size: 2.5vmax;
 }
 
 /* Join Page */
@@ -444,13 +444,11 @@ h1 {
 .joinRow {
   display: flex;
   justify-content: space-between;
-  font-size: 120%;
-  padding: 2% 10% 2% 10%;
+  padding: 2% 10%;
 }
 
 #auditionInfo {
-  padding: 0 2% 0 2%;
-  /* max-width: 60%; */
+  padding: 0 2%;
 }
 
 #infoZoom {
@@ -464,7 +462,7 @@ h1 {
 #join .subtext {
   margin-top: 0;
   padding-top: 0;
-  font-size: 1.2vw;
+  font-size: 1.2vmax;
   font-style: italic;
 }
 
@@ -472,7 +470,6 @@ h1 {
   padding: 2%;
   background-color: #311111;
   color: white;
-  /* max-width: 60%; */
 }
 
 #join hr {
@@ -487,6 +484,13 @@ h1 {
   background: linear-gradient(0deg, rgba(255,242,215,1) 0%, rgba(250,247,242,1) 40%);
 }
 
+.joinRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 #auditionWrapper a {
   font-weight: bold;
 }
@@ -497,23 +501,23 @@ h1 {
 
 #join h3 {
   padding: 2% 2% 2% 0;
-  font-size: 2vw;
+  font-size: 2.5vmax;
 }
 
 #join h4 {
   padding-top: 2%;
-  font-size: 1.6vw;
+  font-size: 1.9vmax;
 }
 
 #join p {
   padding: 2%;
-  font-size: 1.5vw;
+  font-size: 1.7vmax;
 }
 
 #join ol {
   margin-left: 5%;
   margin-right: 5%;
-  font-size: 1.5vw;
+  font-size: 1.7vmax;  
 }
 
 #join a {
@@ -528,11 +532,26 @@ h1 {
   margin-top: 3%;
 }
 
-#auditionInfo img {
+.joinChild img {
   max-width: 90%;
 }
-#faq img {
-  max-width: 85%;
+
+@media only screen and (max-width: 812px) {
+  .joinChild {
+    max-width: 80%;
+  }
+  .joinRow {
+    padding: 2%;
+  }
+  #join h3 {
+    font-size: 22px;
+  }
+  #join h4 {
+    font-size: 20px;
+  }
+  #join p, #join ol {
+    font-size: 18px;
+  }
 }
 
 /* Watch Page */
@@ -548,7 +567,7 @@ h1 {
   padding-bottom: 2vh;
   font-family: "Roboto";
   font-weight: bolder;
-  font-size: 1.75vw;
+  font-size: 1.75vmax;
   width: 100vw;
 }
 
