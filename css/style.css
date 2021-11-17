@@ -1,7 +1,7 @@
 /* General CSS */
 
 * {
-  font-family: "Didot" serif;
+  /* font-family: "Didot" serif; */
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
@@ -43,8 +43,6 @@ html {
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
   border-radius: 2px;
-  /* display: none; */
-  /* display: initial; */
   transition: background-color .2s ease;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -52,7 +50,6 @@ html {
 }
 
 body {
-  /* background-image: url("../assets/splatter.jpg"); */
   background: rgb(255,242,215);
   background: linear-gradient(0deg, rgba(255,242,215,1) 0%, rgba(250,247,242,1) 40%);
   overflow: -moz-scrollbars-none;
@@ -449,14 +446,17 @@ h1 {
 
 #auditionInfo {
   padding: 0 2%;
+  margin-top: 0;
 }
 
-#infoZoom {
+.infoBox {
+  text-align: center;
   padding: 2%;
   margin-bottom: 2%;
-  max-width: 55vw;
+  max-width: 40vw;
   background-color: #311111;
   color: white;
+  border-radius: 30px;
 }
 
 #join .subtext {
@@ -470,12 +470,15 @@ h1 {
   padding: 2%;
   background-color: #311111;
   color: white;
+  border-radius: 8px;
 }
 
 #join hr {
   height: 2px;
-  margin: 3% auto;
+  margin: 20px auto;
   border: none;
+  background-color: #311111;
+  width: 80%;
 }
 #auditionInfo hr {
   background-color: #311111;
@@ -495,8 +498,9 @@ h1 {
   font-weight: bold;
 }
 
-#faq a, #infoZoom a {
+#faq a, .infoBox a {
   color: #E4D9B8;
+  font-weight: bold;
 }
 
 #join h3 {
@@ -529,16 +533,13 @@ h1 {
 }
 
 #join img {
-  margin-top: 3%;
-}
-
-.joinChild img {
-  max-width: 90%;
+  max-width: 60%;
 }
 
 @media only screen and (max-width: 812px) {
   .joinChild {
-    max-width: 80%;
+    max-width: 80vw;
+    margin-top: 20px;
   }
   .joinRow {
     padding: 2%;
@@ -551,6 +552,9 @@ h1 {
   }
   #join p, #join ol {
     font-size: 18px;
+  }
+  #join img {
+    max-width: 80%;
   }
 }
 
