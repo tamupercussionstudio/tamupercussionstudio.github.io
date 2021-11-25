@@ -602,6 +602,9 @@ h1 {
 .showtickets a {
   color: white;
 }
+.showtickets i {
+  color: #E4D9B8;
+}
 
 /* Hide the images by default */
 .mySlides {
