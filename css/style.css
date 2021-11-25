@@ -591,9 +591,10 @@ h1 {
 .showtickets {
   background-color: #311111;
   color: white;
-  border-radius: 25px;
-  padding: 10px 20px;
-  /* max-width: 60%; */
+  border-radius: 50px;
+  padding: 15px 20px;
+  margin: auto;
+  max-width: 75%;
 }
 .showtickets a {
   color: #E4D9B8;
