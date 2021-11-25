@@ -596,8 +596,11 @@ h1 {
   margin: auto;
   max-width: 75%;
 }
+.showtickets:hover {
+  background-color: #311111d0;
+}
 .showtickets a {
-  color: #E4D9B8;
+  color: white;
 }
 
 /* Hide the images by default */
