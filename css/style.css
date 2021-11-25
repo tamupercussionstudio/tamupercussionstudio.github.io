@@ -585,6 +585,18 @@ h1 {
   max-width: 100vw;
   position: relative;
   margin: auto;
+  text-align: center;
+}
+
+.showtickets {
+  background-color: #311111;
+  color: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  /* max-width: 60%; */
+}
+.showtickets a {
+  color: #E4D9B8;
 }
 
 /* Hide the images by default */
