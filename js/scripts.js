@@ -50,42 +50,43 @@ if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.lo
   });
 
   //Watch Section slideshow code from https://www.w3schools.com/howto/howto_js_slideshow.asp
+  var slides = document.getElementsByClassName('mySlides');
+  var numSlides = slides.length;
   var slideIndex = 0;
   showSlides(slideIndex);
   // Next/previous controls
   function plusSlides(n) {
-    stopSlide(slideIndex)
-    showSlides(slideIndex += n);
+    currentSlide(slideIndex+n);
   }
   // Thumbnail image controls
   function currentSlide(n) {
-    stopSlide(slideIndex)
-    showSlides(slideIndex = n);
+    if (n > numSlides-1) {n = 0}
+    if (n < 0) {n = numSlides-1}
+    stopSlide(n)
+    slideIndex = n;
+    showSlides(slideIndex);
   }
   function stopSlide(n) {
     // Resetting src attribute stops video from playing
-    var curFrame = document.getElementsByTagName('iframe')[n];
-    curFrame.setAttribute('src', curFrame.getAttribute('src'));
+    var curFrame = slides[n].getElementsByTagName('iframe')[0];
+    if (curFrame) curFrame.setAttribute('src', curFrame.getAttribute('src'));
   }
   function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName('mySlides');
-    var frames = document.getElementsByTagName('iframe');
+    var slide = slides[slideIndex];
+    var frame = slide.getElementsByTagName('iframe')[0];
     var dots = document.getElementsByClassName('dot');
-    if (n > slides.length-1) {slideIndex = 0}
-    if (n < 0) {slideIndex = slides.length-1}
-    
-    if (frames[slideIndex].getAttribute('src') == "") {
-      frames[slideIndex].setAttribute('src', frames[slideIndex].getAttribute('data-src'));
+
+    if (frame && frame.getAttribute('src') == "") {
+      frame.setAttribute('src', frame.getAttribute('data-src'));
     }
 
-    for (i = 0; i < slides.length; i++) {
+    for (let i = 0; i < numSlides; i++) {
         slides[i].style.display = 'none';
     }
-    for (i = 0; i < dots.length; i++) {
+    for (let i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(' active', '');
     }
-    slides[slideIndex].style.display = 'block';
+    slide.style.display = 'block';
     dots[slideIndex].className += ' active';
   }
 }

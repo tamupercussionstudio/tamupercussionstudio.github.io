@@ -521,7 +521,7 @@ h1 {
 #join ol {
   margin-left: 5%;
   margin-right: 5%;
-  font-size: 1.7vmax;  
+  font-size: 1.7vmax;
 }
 
 #join a {
@@ -544,6 +544,9 @@ h1 {
   .joinRow {
     padding: 2%;
   }
+  /* #join hr {
+    height: 1px;
+  } */
   #join h3 {
     font-size: 22px;
   }
@@ -572,20 +575,12 @@ h1 {
   font-family: "Roboto";
   font-weight: bolder;
   font-size: 1.75vmax;
+  line-height: 1.5;
   width: 100vw;
 }
 
 #watchWrapper a {
   text-decoration: none;
-}
-
-/* Slideshow css from https://www.w3schools.com/howto/howto_js_slideshow.asp */
-/* Slideshow container */
-.slideshow-container {
-  max-width: 100vw;
-  position: relative;
-  margin: auto;
-  text-align: center;
 }
 
 .showtickets {
@@ -606,6 +601,15 @@ h1 {
   color: #E4D9B8;
 }
 
+/* Slideshow css from https://www.w3schools.com/howto/howto_js_slideshow.asp */
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100vw;
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
 /* Hide the images by default */
 .mySlides {
   display: none;
@@ -624,14 +628,16 @@ h1 {
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
   user-select: none;
+  /* background-color: rgba(0,0,0,0.05); */
 }
-
-/* Position the "next button" to the right */
+.prev {
+  left: 0;
+  border-radius: 0 5px 5px 0;
+}
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
+  border-radius: 5px 0 0 5px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -693,18 +699,26 @@ h1 {
   to {opacity: 1}
 }
 
-#watch iframe {
+.iframePlaceholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+  background-color: #262626;
+}
+.iframePlaceholder p {
+  padding: 10px 20px;
+}
+
+.iframeSize {
   height: 33.75vw;
   width: 60vw;
 }
 
 @media only screen and (max-width: 812px) {
-  #watch iframe {
+  .iframeSize {
     height: 45vw;
-    width: 80vw;
-  }
-  #join hr {
-    height: 1px;
+    width: 85vw;
   }
 }
 
