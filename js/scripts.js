@@ -62,7 +62,7 @@ if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.lo
   function currentSlide(n) {
     if (n > numSlides-1) {n = 0}
     if (n < 0) {n = numSlides-1}
-    stopSlide(n)
+    stopSlide(slideIndex);
     slideIndex = n;
     showSlides(slideIndex);
   }
@@ -72,12 +72,13 @@ if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.lo
     if (curFrame) curFrame.setAttribute('src', curFrame.getAttribute('src'));
   }
   function showSlides(n) {
-    var slide = slides[slideIndex];
+    var slide = slides[n];
     var frame = slide.getElementsByTagName('iframe')[0];
     var dots = document.getElementsByClassName('dot');
 
     if (frame && frame.getAttribute('src') == "") {
-      frame.setAttribute('src', frame.getAttribute('data-src'));
+      let src = frame.getAttribute('data-src');
+      frame.setAttribute('src', src);
     }
 
     for (let i = 0; i < numSlides; i++) {
@@ -87,7 +88,7 @@ if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.lo
         dots[i].className = dots[i].className.replace(' active', '');
     }
     slide.style.display = 'block';
-    dots[slideIndex].className += ' active';
+    dots[n].className += ' active';
   }
 }
 
