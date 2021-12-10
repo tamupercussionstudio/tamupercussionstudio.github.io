@@ -459,11 +459,13 @@ h1 {
   border-radius: 30px;
 }
 
+.subtext {
+  font-size: 1.2vmax;
+  font-style: italic;
+}
 #join .subtext {
   margin-top: 0;
   padding-top: 0;
-  font-size: 1.2vmax;
-  font-style: italic;
 }
 
 #faq {
@@ -705,9 +707,16 @@ h1 {
   justify-content: space-around;
   color: white;
   background-color: #262626;
+  padding: 10px;
 }
 .iframePlaceholder p {
   padding: 10px 20px;
+  font-style: italic;
+  font-size: 1.5vmax;
+}
+.iframePlaceholder img {
+  max-height: 15vw;
+  object-fit: contain;
 }
 
 .iframeSize {
@@ -719,6 +728,9 @@ h1 {
   .iframeSize {
     height: 45vw;
     width: 85vw;
+  }
+  .iframePlaceholder img {
+    display: none;
   }
 }
 
