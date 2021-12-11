@@ -2,10 +2,7 @@
 function init() {
 	// document.getElementById('covidBanner').style.visibility='hidden'; // 'visible';
 	// bannerClosed = true;  // 'false';
-	// var vidDefer = document.getElementsByTagName('iframe')[0];
-	// vidDefer.setAttribute('src',vidDefer.getAttribute('data-src'));
 }
-window.onload = init;
 
 //Delete after COVID
 // function closeBanner() {
@@ -68,12 +65,14 @@ if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.lo
 	}
 	function stopSlide(n) {
 		// Resetting src attribute stops video from playing
-		var curFrame = slides[n].getElementsByTagName('iframe')[0];
-		if (curFrame) curFrame.setAttribute('src', curFrame.getAttribute('src'));
+		var curFrame = slides[n].querySelector('iframe');
+		if (curFrame) {
+			curFrame.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo' }), '*');
+		}
 	}
 	function showSlides(n) {
 		var slide = slides[n];
-		var frame = slide.getElementsByTagName('iframe')[0];
+		var frame = slide.querySelector('iframe');
 		var dots = document.getElementsByClassName('dot');
 
 		if (frame && frame.getAttribute('src') == "") {
@@ -90,13 +89,6 @@ if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.lo
 		slide.style.display = 'block';
 		dots[n].className += ' active';
 	}
-}
-
-if (window.location.href.includes('#watch')) {
-	// scroll to location of #watch element
-	var watch = document.getElementById('watch');
-	var watchPos = watch.getBoundingClientRect().top;
-	window.scrollTo(0, watchPos);
 }
 
 function scrollCheck() {
