@@ -64,21 +64,23 @@ if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.lo
 		showSlides(slideIndex);
 	}
 	function stopSlide(n) {
-		// Resetting src attribute stops video from playing
+		// Pause the iframe video on the slide
 		var curFrame = slides[n].querySelector('iframe');
 		if (curFrame) {
 			curFrame.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo' }), '*');
 		}
 	}
 	function showSlides(n) {
+		// make the nth slide visible and the others invisible, and update dots
+
 		var slide = slides[n];
-		var frame = slide.querySelector('iframe');
 		var dots = document.getElementsByClassName('dot');
 
-		if (frame && frame.getAttribute('src') == "") {
-			let src = frame.getAttribute('data-src');
-			frame.setAttribute('src', src);
-		}
+		// var frame = slide.querySelector('iframe');
+		// if (frame && frame.getAttribute('src') == "") {
+		// 	let src = frame.getAttribute('data-src');
+		// 	frame.setAttribute('src', src);
+		// }
 
 		for (let i = 0; i < numSlides; i++) {
 				slides[i].style.display = 'none';
