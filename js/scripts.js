@@ -92,6 +92,13 @@ if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.lo
 	}
 }
 
+if (window.location.href.includes('#watch')) {
+	// scroll to location of #watch element
+	var watch = document.getElementById('watch');
+	var watchPos = watch.getBoundingClientRect().top;
+	window.scrollTo(0, watchPos);
+}
+
 function scrollCheck() {
 	var y = Math.ceil(document.getElementById('parallaxWrapper').scrollTop);
 	var about = document.getElementById('about').offsetTop;
