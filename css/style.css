@@ -460,8 +460,9 @@ h1 {
 }
 
 .subtext {
-	font-size: 1.2vmax;
+	font-size: 1.2vmax !important;
 	font-style: italic;
+	font-weight: 100;
 }
 #join .subtext {
 	margin-top: 0;
