@@ -76,12 +76,6 @@ if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.lo
 		var slide = slides[n];
 		var dots = document.getElementsByClassName('dot');
 
-		// var frame = slide.querySelector('iframe');
-		// if (frame && frame.getAttribute('src') == "") {
-		// 	let src = frame.getAttribute('data-src');
-		// 	frame.setAttribute('src', src);
-		// }
-
 		for (let i = 0; i < numSlides; i++) {
 				slides[i].style.display = 'none';
 		}
