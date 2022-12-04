@@ -595,7 +595,7 @@ h1 {
 	max-width: 75%;
 }
 .showtickets:hover {
-	/* background-color: #311111d0; */
+	background-color: #311111d0;
 }
 .showtickets a {
 	color: white;
