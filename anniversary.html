@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Texas A&M Percussion Studio" />
+    <meta name="keywords" content="percussion, studio, drums, marimba, Texas, aggies, A&M, student, donate" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="HandheldFriendly" content="true" />
+
+    <title>Donate - Texas A&M Percussion Studio</title>
+    <link rel="icon" href="assets/webIcon.png" />
+    <link href="css/auxiliarypages.css" rel="stylesheet" type="text/css" />
+    <script src="js/scripts.js" defer></script>
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f7f7f7;
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        #navHeader {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        #navHeader h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0;
+            color: #fff;
+        }
+
+        #menuLabel {
+            font-size: 1.2em;
+            cursor: pointer;
+            color: #007BFF;
+        }
+
+        /* Sidebar Navigation (Hidden by Default) */
+        #nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding-top: 60px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 999;
+        }
+
+        #nav.show {
+            transform: translateX(0);
+        }
+
+        #linkBar {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        #linkBar .link {
+            margin: 15px 0;
+        }
+
+        #linkBar a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        #linkBar a:hover {
+            color: #fff;
+        }
+
+        /* Donate Section */
+        #donate {
+            padding-top: 80px; /* to account for fixed nav */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background-color: #ffffff;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .overlay {
+            position: relative;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .overlay h1 {
+            font-size: 2.5em;
+            margin-top: 10px;
+        }
+
+        .overlay img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-bottom: 5px solid #007BFF;
+        }
+
+        .textBox {
+            padding: 40px;
+            font-size: 1.1em;
+        }
+
+        .textBox h2 {
+            color: #007BFF;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .textBox h4 {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .textBox p {
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #ddd;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer h3 {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .socialBubbles {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .socialBubbles img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .socialBubbles img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .overlay h1 {
+                font-size: 2em;
+            }
+
+            .textBox {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <div id="navHeader">
+        <h1>TAMU Percussion Studio</h1>
+        <p id="menuLabel" onclick="toggleNav()">MENU</p>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <div id="nav">
+        <div id="linkBar">
+            <div class="link"><a href="index.html#about">About</a></div>
+            <div class="link"><a href="index.html#join">Join</a></div>
+            <div class="link"><a href="index.html#watch">Watch</a></div>
+            <div class="link"><a href="index.html#contact">Contact</a></div>
+            <div class="link"><a href="https://secure.touchnet.com/C21490_ustores/web/classic/store_main.jsp?STOREID=452" target="_blank">Shop</a></div>
+            <div class="link"><a href="donate.html">Donate</a></div>
+            <div class="link"><a href="bookus.html">Book Us</a></div>
+            <div class="link"><a href="https://drive.google.com/drive/u/0/folders/0AKGXTc2eigXKUk9PVA">Members</a></div>
+        </div>
+    </div>
+
+    <!-- Donate Section -->
+    <main>
+        <div id="donate">
+            <div class="content">
+                <div class="overlay">
+                    <img src="assets/giantcheck.JPG" alt="Donate Image" />
+                    <h1>Donate</h1>
+                </div>
+                <div class="textBox">
+                    <h2>Thank you for your support!</h2>
+                    <h4><i>There are four ways you can help us out:</i></h4>
+                    <p><b>1. Donate online at <a href="https://tx.ag/psdonate" target="_blank">tx.ag/psdonate</a> (maximum of $249)</b></p>
+                    <p><b>2. Donate online at <a href="https://www.txamfoundation.com/give.aspx" target="_blank">txamfoundation.com</a> (tax deductible)</b><br>
+                       Select "Contribute to a fund not listed online"<br>
+                       In the Gift Fund Name or Number Line please put "Percussion Studio account #954670"
+                    </p>
+                    <p><b>3. Send a check to the Texas A&M Foundation. (tax deductible)</b><br>
+                       In the Memo Line please specify this goes to "Percussion Studio account #954670"
+                    </p>
+                    <p><b>4. Pay us to play for you!</b> <br>You can contact us <a href="bookus.html">here</a>. We love playing for people and really enjoy getting paid to play too!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <h3>&copy; 2024 Percussion Studio</h3>
+        <div class="socialBubbles">
+            <a href="https://www.facebook.com/PercussionStudio/"><img src="assets/f_logo_RGB-Blue_1024.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/tamupercussionstudio/"><img src="assets/Instagram_AppIcon_Aug2017.png" alt="Instagram"></a>
+            <a href="https://twitter.com/tamupercstud"><img src="assets/Twitter_Social_Icon_Circle_Color.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script>
+        function

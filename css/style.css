@@ -5,6 +5,7 @@
 	scroll-behavior: smooth;
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 @font-face {
@@ -123,131 +124,95 @@ h1 {
 	z-index: -1;
 } */
 
-/* Navigation Content */
-
+/* Navbar styles */
 #navHeader {
-	height: 6vh;
-	width: 10vh;
-	z-index: 3;
-	position: fixed;
-	display: flex;
-	justify-content: center;
-	margin: 2% 0 0 2%;
-	visibility: hidden;
-	opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #311111;
+  color: white;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+  font-family: "Roboto", sans-serif;
 }
 
-#navHeader img {
-	height: auto;
-	width: 100%;
-	opacity: 100%;
-	position: absolute;
-	transition: 1s ease;
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+	height:100%;
 }
 
-#navHeader:hover {
-	cursor: pointer;
+.navLogo img {
+  height: 50px;
 }
 
-#stick1 {
-	transform: rotate(0deg) translate(0, 0) scale(1, 1.4);
+.navMenu {
+  list-style: none;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+	height: 100%;
 }
 
-#stick2 {
-	transform: rotate(180deg) translate(0, -5vh) scale(1, 1.4);
+.navItem {
+  position: relative;
+	padding: 30px;
 }
 
-#menuLabel {
-	align-self: center;
-	font-family: "Roboto Bold";
-	font-size: 2.5vh;
+.navItem a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; 
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-#nav {
-	position: fixed;
-	display: flex;
-	justify-content: center;
-	height: 100vh;
-	width: 100vw;
-	font-family: "Roboto Bold";
-	background-color: #311111;
-	overflow: hidden;
-	z-index: 2;
+.navItem:hover > a {
+  color: rgba(255, 242, 215, 1);
+  text-decoration: none;
 }
 
-#linkBar {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	position: absolute;
-	bottom: 5vh;
-	width: 100vw;
+/* Dropdown menu styles */
+.navItem .dropdown {
+  display: none;
+  position: absolute;
+  background-color: #311111;
+  min-width: 150px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  top: 100%;
+  left: 0;
+  z-index: 100;
 }
 
-.column {
-	display: flex;
-	flex-direction: column;
-	margin: 5%;
+.navItem .dropdown li {
+  padding: 0;
+	margin: 0;
 }
 
-#left {
-	text-align: right;
+.navItem .dropdown li a {
+  color: white;
+  display: block;
+  padding: 10px 20px;
 }
 
-#line {
-	background-color: white;
-	margin: 5% 0 5% 0;
-	max-height: 28vw;
-	width: 4px;
+.navItem .dropdown li a:hover {
+  background-color: rgba(255, 242, 215, 1);
+  color: #311111;
 }
 
-#right {
-	text-align: left;
+.navItem:hover .dropdown {
+  display: block;
 }
-
-#nav a {
-	font-size: 6vw;
-	text-decoration-line: none;
-	color: white;
-}
-
-#nav a:hover {
-	color: #E4D9B8;
-}
-
-@media only screen and (max-width: 812px) {
-	#nav {
-		overflow: scroll;
-	}
-
-	#linkBar {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-		bottom: auto;
-		padding: 0;
-		width: auto;
-	}
-	.column {
-		margin: 0
-	}
-	#left {
-		text-align: center;
-		margin: 0;
-	}
-	#right {
-		text-align: center;
-		margin: 0;
-	}
-	#line {
-		visibility: hidden;
-		position: absolute;
-	}
-	#nav a {
-		font-size: 8vh;
-	}
-}
-
 /* Front Page */
 
 /* #frontPage {
@@ -735,6 +700,7 @@ h1 {
 	}
 }
 
+
 /* Contact Page */
 
 #contactTitle {
@@ -746,6 +712,7 @@ h1 {
 	flex-direction: column;
 	padding-top: 5vh;
 	padding-bottom: 2vh;
+	width: 100%;
 }
 
 #fifthSection.section.parallax.bg2::after {
@@ -757,9 +724,12 @@ h1 {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+	padding: 2% 10%;
 }
 
+
 .contactCard {
+	box-sizing: content-box;
 	background-color: white;
 	border-radius: 5%;
 	padding: 20px;

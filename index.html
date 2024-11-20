@@ -20,60 +20,33 @@
     <script type="text/javascript" src="js/scripts.js" defer></script>
   </head>
   <body id="indexBody" onload="init()">
-    
-    <div id="navHeader" onclick="toggleNav()">
-      <img id="stick1" src="assets/drumstickBlack.png" />
-      <img id="stick2" src="assets/drumstickBlack.png" />
-      <p id="menuLabel">MENU</p>
-      <!-- <div id="covidBanner">
-			<svg xmlns="http://www.w3.org/2000/svg" onclick="closeBanner();event.cancelBubble=true;"class="icon icon-tabler icon-tabler-x" width="4vh" height="4vh" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-			<path stroke="none" d="M0 0h24v24H0z"/>
-			<line x1="18" y1="6" x2="6" y2="18" />
-			<line x1="6" y1="6" x2="18" y2="18" />
-			</svg>
-			<a href="Spring2021.html" id="bannerText">Click here for ticket information and Spring 2021 updates</a>
-		</div> -->
-    </div>
-    <div id="nav" style="visibility: hidden">
-      <div id="linkBar">
-        <div id="left" class="column">
-          <div class="link">
-            <a href="#about" onclick="toggleNav()">About</a>
-          </div>
-          <div class="link">
-            <a href="#join" onclick="toggleNav()">Join</a>
-          </div>
-          <div class="link">
-            <a href="#watch" onclick="toggleNav()">Watch</a>
-          </div>
-          <div class="link">
-            <a href="#contact" onclick="toggleNav()">Contact</a>
-          </div>
+    <nav id="navHeader">
+      <div class="navContainer">
+        <div class="navLogo">
+          <a href="index.html"><img src="assets/logo.png" alt="Percussion Studio Logo" /></a>
         </div>
-        <div id="line"></div>
-        <div id="right" class="column">
-          <div class="link">
-            <a
-              href="https://secure.touchnet.com/C21490_ustores/web/classic/store_main.jsp?STOREID=452"
-              target="_blank"
-              >Shop</a
-            >
-          </div>
-          <div class="link">
-            <a href="donate.html">Donate</a>
-          </div>
-          <div class="link">
-            <a href="bookus.html">Book Us</a>
-          </div>
-          <div class="link">
-            <a
-              href="https://drive.google.com/drive/u/0/folders/0AKGXTc2eigXKUk9PVA"
-              >Members</a
-            >
-          </div>
-        </div>
+        <ul class="navMenu">
+          <li class="navItem">
+            <a href="#">About</a>
+            <ul class="dropdown">
+              <li><a href="#about">About</a></li>
+              <li><a href="#join">Join</a></li>
+              <li><a href="#watch">Watch</a></li>
+              <li><a href="#members">Members</a></li>
+            </ul>
+          </li>
+          <li class="navItem">
+            <a href="#">Donate</a>
+            <ul class="dropdown">
+              <li><a href="donate.html">Donate</a></li>
+              <li><a href="#alumni">Alumni</a></li>
+            </ul>
+          </li>
+          <li class="navItem"><a href="#join">Join</a></li>
+          <li class="navItem"><a href="#bookus">Book Us</a></li>
+        </ul>
       </div>
-    </div>
+    </nav>
 
     <main id="parallaxWrapper" onscroll="scrollCheck()">
       <div id="frontPage">
@@ -170,7 +143,7 @@
                     Fall 2024. 
                   </p> 
                   <p>
-                    <b>Interested in joining for the Spring 2025 semester?</b>
+                    <b>interested in joining for the Spring 2025 semester?</b>
                   </p>
                   <p>
                     Fill out
@@ -573,62 +546,62 @@
                   </p>
                 </div>
               </div>
-              <div class="row">
-                <div class="grow">
-                  <div id="publicRelations" class="contactCard">
-                    <h3>Public Relations</h3>
-                    <img
-                      src="assets/mayaprofile.jpg"
-                      height="150px"
-                      width="150px"
-                    />
-                    <h4>Maya Coleman</h4>
-                    <p>
-                      <a href="mailto:mayajane0625@tamu.edu">mayajane0625@tamu.edu</a>
-                    </p>
-                  </div>
+            </div>
+            <div class="row">
+              <div class="grow">
+                <div id="publicRelations" class="contactCard">
+                  <h3>Public Relations</h3>
+                  <img
+                    src="assets/mayaprofile.jpg"
+                    height="150px"
+                    width="150px"
+                  />
+                  <h4>Maya Coleman</h4>
+                  <p>
+                    <a href="mailto:mayajane0625@tamu.edu">mayajane0625@tamu.edu</a>
+                  </p>
                 </div>
-                <div class="grow">
-                  <div id="socialOfficer" class="contactCard">
-                    <h3>Socials</h3>
-                    <img
-                      src="assets/noah.jpg"
-                      height="150px"
-                      width="150px"
-                    />
-                    <h4>Noah Johannessen</h4>
-                    <p>
-                      <a href="mailto:njohannessen@tamu.edu">njohannessen@tamu.edu</a>
-                    </p>
-                  </div>
+              </div>
+              <div class="grow">
+                <div id="socialOfficer" class="contactCard">
+                  <h3>Socials</h3>
+                  <img
+                    src="assets/noah.jpg"
+                    height="150px"
+                    width="150px"
+                  />
+                  <h4>Noah Johannessen</h4>
+                  <p>
+                    <a href="mailto:njohannessen@tamu.edu">njohannessen@tamu.edu</a>
+                  </p>
                 </div>
-                <div class="grow">
-                  <div id="webmaster" class="contactCard">
-                    <h3>Webmaster</h3>
-                    <img
-                      src="assets/lehanaprofile.jpg"
-                      height="150px"
-                      width="150px"
-                    />
-                    <h4>Lehana Ramkumar</h4>
-                    <p>
-                      <a href="mailto:lehanar57@tamu.edu">lehanar57@tamu.edu</a>
-                    </p>
-                  </div>
+              </div>
+              <div class="grow">
+                <div id="webmaster" class="contactCard">
+                  <h3>Webmaster</h3>
+                  <img
+                    src="assets/lehanaprofile.jpg"
+                    height="150px"
+                    width="150px"
+                  />
+                  <h4>Lehana Ramkumar</h4>
+                  <p>
+                    <a href="mailto:lehanar57@tamu.edu">lehanar57@tamu.edu</a>
+                  </p>
                 </div>
-                <div class="grow">
-                  <div id="tara" class="contactCard">
-                    <h3>Advisor</h3>
-                    <img
-                      src="assets/taraprofile.jpg"
-                      height="150px"
-                      width="150px"
-                    />
-                    <h4>Tara Blasor</h4>
-                    <p>
-                      <a href="mailto:tblasor@mays.tamu.edu">tblasor@mays.tamu.edu</a>
-                    </p>
-                  </div>
+              </div>
+              <div class="grow">
+                <div id="tara" class="contactCard">
+                  <h3>Advisor</h3>
+                  <img
+                    src="assets/taraprofile.jpg"
+                    height="150px"
+                    width="150px"
+                  />
+                  <h4>Tara Blasor</h4>
+                  <p>
+                    <a href="mailto:tblasor@mays.tamu.edu">tblasor@mays.tamu.edu</a>
+                  </p>
                 </div>
               </div>
             </div>

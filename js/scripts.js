@@ -89,7 +89,9 @@ if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.lo
 
 function scrollCheck() {
 	var y = Math.ceil(document.getElementById('parallaxWrapper').scrollTop);
-	var about = document.getElementById('about').offsetTop;
+  var about = document.getElementById('about').offsetTop;
+  var showNavAt = window.innerHeight * 0.8; // Example threshold
+
 	var join = document.getElementById('join').offsetTop;
 	var r3 = document.getElementById('row3').offsetTop + about;
 	//Stick overlay opacity
@@ -127,37 +129,13 @@ function scrollCheck() {
 	else {
 		document.getElementById('tickets').style.transform = 'translate(100%, -20%) rotate(-5deg)';
 	}
-}
 
-//Changes visibility of navigation screen and performs menu button animation
-function toggleNav() {
-	var nav = document.getElementById('nav');
-	var stick1 = document.getElementById('stick1');
-	var stick2 = document.getElementById('stick2');
-	var label = document.getElementById('menuLabel');
-	// var banner = document.getElementById('covidBanner');
-	// var isVis = banner.style.visibility;
-	if (nav.style.visibility == 'hidden') {
-		nav.style.visibility = 'visible';
-		label.style.transitionDelay = '0s';
-		label.style.opacity = 0;
-		label.style.visibility = 'hidden';
-		stick1.src = 'assets/drumstickWhite.png';
-		stick2.src = 'assets/drumstickWhite.png';
-		stick1.style.transform = 'rotate(-45deg) translate(-2.5vh, 2.5vh) scale(1, 1.4)';
-		stick2.style.transform = 'rotate(225deg) translate(-2.5vh, -2.5vh) scale(1, 1.4)';
-		// banner.style.visibility = 'hidden';
-	}
-	else {
-		nav.style.visibility = 'hidden';
-		document.getElementById('navHeader').style.opacity = '1';
-		label.style.transitionDelay = '1s';
-		label.style.visibility = 'visible';
-		label.style.opacity = 1;
-		stick1.src = 'assets/drumstickBlack.png';
-		stick2.src = 'assets/drumstickBlack.png';
-		stick1.style.transform = 'rotate(0deg) translate(0, 0) scale(1, 1.4)';
-		stick2.style.transform = 'rotate(180deg) translate(0, -5vh) scale(1, 1.4)';
-		// if (!bannerClosed) banner.style.visibility = 'visible';
-	}
+	
+  if (y >= showNavAt) {
+    document.getElementById('navHeader').style.visibility = 'visible';
+    document.getElementById('navHeader').style.opacity = '1';
+  } else {
+    document.getElementById('navHeader').style.visibility = 'hidden';
+    document.getElementById('navHeader').style.opacity = '0';
+  }
 }
