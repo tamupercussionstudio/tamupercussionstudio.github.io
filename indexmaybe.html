@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Texas A&M Percussion Studio">
+    <meta name="keywords" content="percussion, studio, drums, marimba, Texas, aggies, A&M, student, perform">
+    <title>TAMU Percussion Studio</title>
+    <link rel="icon" href="assets/webIcon.png">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/scripts.js" defer></script>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #444;
+            font-weight: 700;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        /* Navigation */
+        #navHeader {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        #navHeader img {
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        #menuLabel {
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .titleRow {
+            margin-bottom: 40px;
+        }
+
+        .titleRow h1 {
+            font-size: 2.5em;
+        }
+
+        .textBox {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f7f7f7;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        /* Button Styling */
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Styling */
+        footer {
+            background: #222;
+            color: #ddd;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer img {
+            width: 30px;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #menuLabel {
+                font-size: 1.2em;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .textBox {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body onload="init()">
+
+    <!-- Navigation -->
+    <div id="navHeader" onclick="toggleNav()">
+        <img src="assets/drumstickBlack.png" alt="Drumstick Icon">
+        <p id="menuLabel">MENU</p>
+    </div>
+
+    <!-- Main Content -->
+    <main id="parallaxWrapper" onscroll="scrollCheck()">
+
+        <!-- Home Section -->
+        <section id="frontPage" class="section bg1">
+            <div>
+                <img src="assets/logo.png" alt="Percussion Studio Logo" style="max-width: 100%; height: auto;">
+                <p>Texas A&M University's Premier Percussion Student Organization</p>
+            </div>
+            <a href="#about"><img src="assets/downArrowWhite.png" alt="About" style="margin-top: 20px;"></a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="titleRow">
+                <h1>About</h1>
+            </div>
+            <div class="textBox">
+                <p>Founded in 1999, Percussion Studio is a student-led organization at Texas A&M University dedicated to the art of percussive ensemble performances. We cover everything from traditional percussion ensembles to original pieces, creating a unique show at the end of each semester and other performances throughout the year.</p>
+            </div>
+        </section>
+
+        <!-- Join Section -->
+        <section id="join" class="section">
+            <div class="titleRow">
+                <h1>Join</h1>
+            </div>
+            <div class="textBox">
+                <h3>Audition Process</h3>
+                <p>The audition consists of four parts: Snare Sight Reading, Mallet Sight Reading, a Prepared Piece, and an Interview. Instruments available include snare, 3-octave marimba, and drumset.</p>
+                <a href="https://forms.gle/wrt7U8ZQogECiEAb8" target="_blank" class="button">Sign Up for Auditions</a>
+            </div>
+        </section>
+
+        <!-- Watch Section -->
+        <section id="watch" class="section">
+            <div class="titleRow">
+                <h1>Watch</h1>
+            </div>
+            <div class="textBox">
+                <p>Enjoy past performances! Consider <a href="donate.html">making a donation</a> to support us.</p>
+            </div>
+            <!-- Video iframe examples here if desired -->
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="titleRow">
+                <h1>Contact</h1>
+            </div>
+            <div class="textBox">
+                <h3>President</h3>
+                <p>David Soto - <a href="mailto:saviddodo@tamu.edu">saviddodo@tamu.edu</a></p>
+                <h3>Vice President</h3>
+                <p>Morgan Rackley - <a href="mailto:pxr45159@tamu.edu">pxr45159@tamu.edu</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Percussion Studio</p>
+        <a href="https://www.facebook.com/PercussionStudio/"><img src="assets/f_logo_RGB-Blue_1024.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/tamupercussionstudio/"><img src="assets/Instagram_AppIcon_Aug2017.png" alt="Instagram"></a>
+        <a href="https://twitter.com/tamupercstud"><img src="assets/Twitter_Social_Icon_Circle_Color.png" alt="Twitter"></a>
+    </footer>
+</body>
+</html>

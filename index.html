@@ -20,60 +20,33 @@
     <script type="text/javascript" src="js/scripts.js" defer></script>
   </head>
   <body id="indexBody" onload="init()">
-    
-    <div id="navHeader" onclick="toggleNav()">
-      <img id="stick1" src="assets/drumstickBlack.png" />
-      <img id="stick2" src="assets/drumstickBlack.png" />
-      <p id="menuLabel">MENU</p>
-      <!-- <div id="covidBanner">
-			<svg xmlns="http://www.w3.org/2000/svg" onclick="closeBanner();event.cancelBubble=true;"class="icon icon-tabler icon-tabler-x" width="4vh" height="4vh" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-			<path stroke="none" d="M0 0h24v24H0z"/>
-			<line x1="18" y1="6" x2="6" y2="18" />
-			<line x1="6" y1="6" x2="18" y2="18" />
-			</svg>
-			<a href="Spring2021.html" id="bannerText">Click here for ticket information and Spring 2021 updates</a>
-		</div> -->
-    </div>
-    <div id="nav" style="visibility: hidden">
-      <div id="linkBar">
-        <div id="left" class="column">
-          <div class="link">
-            <a href="#about" onclick="toggleNav()">About</a>
-          </div>
-          <div class="link">
-            <a href="#join" onclick="toggleNav()">Join</a>
-          </div>
-          <div class="link">
-            <a href="#watch" onclick="toggleNav()">Watch</a>
-          </div>
-          <div class="link">
-            <a href="#contact" onclick="toggleNav()">Contact</a>
-          </div>
+    <nav id="navHeader">
+      <div class="navContainer">
+        <div class="navLogo">
+          <a href="index.html"><img src="assets/logo.png" alt="Percussion Studio Logo" /></a>
         </div>
-        <div id="line"></div>
-        <div id="right" class="column">
-          <div class="link">
-            <a
-              href="https://secure.touchnet.com/C21490_ustores/web/classic/store_main.jsp?STOREID=452"
-              target="_blank"
-              >Shop</a
-            >
-          </div>
-          <div class="link">
-            <a href="donate.html">Donate</a>
-          </div>
-          <div class="link">
-            <a href="bookus.html">Book Us</a>
-          </div>
-          <div class="link">
-            <a
-              href="https://drive.google.com/drive/u/0/folders/0AKGXTc2eigXKUk9PVA"
-              >Members</a
-            >
-          </div>
-        </div>
+        <ul class="navMenu">
+          <li class="navItem">
+            <a href="#">About</a>
+            <ul class="dropdown">
+              <li><a href="#about">About</a></li>
+              <li><a href="#join">Join</a></li>
+              <li><a href="#watch">Watch</a></li>
+              <li><a href="#members">Members</a></li>
+            </ul>
+          </li>
+          <li class="navItem">
+            <a href="#">Donate</a>
+            <ul class="dropdown">
+              <li><a href="donate.html">Donate</a></li>
+              <li><a href="alumni.html">Alumni</a></li>
+            </ul>
+          </li>
+          <li class="navItem"><a href="#join">Join</a></li>
+          <li class="navItem"><a href="#bookus">Book Us</a></li>
+        </ul>
       </div>
-    </div>
+    </nav>
 
     <main id="parallaxWrapper" onscroll="scrollCheck()">
       <div id="frontPage">
@@ -124,7 +97,7 @@
             <div id="row2" class="aboutRow">
               <img
                 id="starwars"
-                src="assets/starwarsbattle.jpg"
+                src="assets/trashcan.jpg"
                 alt="starwars"
               />
               <div id="text2" class="textBox">
@@ -165,13 +138,12 @@
             <div id="auditionWrapper" class="joinRow">
               <div id="auditionInfo" class="textBox joinChild">
                 <div class="infoBox joinChild">
-                  <!-- <p>
+                   <p>
                     Unfortunately, we are not holding any more auditions for
-                    Spring 2024. Check back over the summer to learn more about
-                    auditions for Fall 2024!
-                  </p> -->
+                    Fall 2024. 
+                  </p> 
                   <p>
-                    <b>Interested in joining for the Spring 2025 semester?</b>
+                    <b>Interested in joining for the Fall 2024 semester?</b>
                   </p>
                   <p>
                     Fill out
@@ -184,8 +156,8 @@
                   </p>
                   
                    <p>
-                    Our First Spring 2025 informational will be held
-                    <b>on Wednesday, January 22nd at 6:30-7:30 PM</b> on Zoom. Meet
+                    Our First Fall 2024 informational will be held
+                    <b>on Thursday, August 29th at 7:00 PM</b> on Zoom. Meet
                     us
                     <a href="https://tamu.zoom.us/j/93987156271" target="_blank"
                       >here. The link will be live the day of the informational! </a
@@ -198,7 +170,7 @@
                       target="_blank"
                       >Sign up for auditions</a
                     >!
-                  </p> 
+                  </p> -->
                 </div>
                 <h3>Audition</h3>
                 <p>The audition consists of four parts:</p>
@@ -304,30 +276,12 @@
             </div>
             <hr />
             <center>
-              <img id="treegang" src="assets/treegang.jpg" alt="tree branch" />
+              <img id="treegang" src="assets/percussionstudionewphoto.JPG" alt="percstuds" />
             </center>
             <br />
           </div>
         </section>
       </div>
-
-
-      <div id="donate">
-        <section id="fourthSection" class="section parallax bg2">
-          <div id="watchWrapper">
-            <div id="watchTitle" class="titleRow">
-              <h1>Donate</h1>
-              <div class="bar"></div>
-            </div>
-            <div style="text-align: center; padding: 0 20px">
-              <p>
-                Like what you see? Consider
-                <a href="donate.html">making a donation</a> to help us keep
-                drumming!
-              </p>
-              <br />
-
-
 
       <div id="watch">
         <section id="fourthSection" class="section parallax bg2">
@@ -337,11 +291,7 @@
               <div class="bar"></div>
             </div>
             <div style="text-align: center; padding: 0 20px">
-              <p>
-                Like what you see? Consider
-                <a href="donate.html">making a donation</a> to help us keep
-                drumming!
-              </p>
+
               <br />
 
               <!-- <a href="https://tx.ag/pstix" target="_blank"
@@ -544,9 +494,11 @@
                     height="150px"
                     width="150px"
                   />
-                  <h4>David Soto</h4>
+                  <h4> <a href="mailto:saviddodo@tamu.edu">David Soto</a> </h4>
+                  <h6>saviddodo@tamu.edu</h6>
+                  
                   <p>
-                    <a href="mailto:saviddodo@tamu.edu">saviddodo@tamu.edu</a>
+
                   </p>
                 </div>
               </div>
@@ -558,9 +510,10 @@
                     height="150px"
                     width="150px"
                   />
-                  <h4>Morgan Rackley</h4>
+                  <h4><a href="mailto:pxr45159@tamu.edu">Morgan Rackley</a></h4>
+                  <h6>pxr45159@tamu.edu</h6>
                   <p>
-                    <a href="mailto:pxr45159@tamu.edu">pxr45159@tamu.edu</a>
+                    
                   </p>
                 </div>
               </div>
@@ -572,9 +525,10 @@
                     height="150px"
                     width="150px"
                   />
-                  <h4>Harrison Herndon</h4>
+                  <h4><a href="mailto:hrherndon@tamu.edu">Harrison Herndon</a></h4>
+                  <h6>hrherndon@tamu.edu</h6>
                   <p>
-                    <a href="mailto:hrherndon@tamu.edu">hrherndon@tamu.edu</a>
+                    
                   </p>
                 </div>
               </div>
@@ -586,68 +540,73 @@
                     height="150px"
                     width="150px"
                   />
-                  <h4>Zachary Williams</h4>
+                  <h4><a href="mailto:z_will@tamu.edu">Zachary Williams</a></h4>
+                  <h6>z_will@tamu.edu</h6>
                   <p>
-                    <a href="mailto:z_will@tamu.edu">z_will@tamu.edu</a>
+                    
                   </p>
                 </div>
               </div>
-              <div class="row">
-                <div class="grow">
-                  <div id="publicRelations" class="contactCard">
-                    <h3>Public Relations</h3>
-                    <img
-                      src="assets/mayaprofile.jpg"
-                      height="150px"
-                      width="150px"
-                    />
-                    <h4>Maya Coleman</h4>
-                    <p>
-                      <a href="mailto:mayajane0625@tamu.edu">mayajane0625@tamu.edu</a>
-                    </p>
-                  </div>
+            </div>
+            <div class="row">
+              <div class="grow">
+                <div id="publicRelations" class="contactCard">
+                  <h3>Public Relations</h3>
+                  <img
+                    src="assets/mayaprofile.jpg"
+                    height="150px"
+                    width="150px"
+                  />
+                  <h4><a href="mailto:mayajane0625@tamu.edu">Maya Coleman</a></h4>
+                  <h6>mayajane0625@tamu.edu</h6>
+                  <p>
+                    
+                  </p>
                 </div>
-                <div class="grow">
-                  <div id="socialOfficer" class="contactCard">
-                    <h3>Socials</h3>
-                    <img
-                      src="assets/noah.jpg"
-                      height="150px"
-                      width="150px"
-                    />
-                    <h4>Noah Johannessen</h4>
-                    <p>
-                      <a href="mailto:njohannessen@tamu.edu">njohannessen@tamu.edu</a>
-                    </p>
-                  </div>
+              </div>
+              <div class="grow">
+                <div id="socialOfficer" class="contactCard">
+                  <h3>Socials</h3>
+                  <img
+                    src="assets/noah.jpg"
+                    height="150px"
+                    width="150px"
+                  />
+                  <h4><a href="mailto:njohannessen@tamu.edu">Noah Johannessen</a></h4>
+                  <h6>njohannessen@tamu.edu</h6>
+                  <p>
+                    
+                  </p>
                 </div>
-                <div class="grow">
-                  <div id="webmaster" class="contactCard">
-                    <h3>Webmaster</h3>
-                    <img
-                      src="assets/lehanaprofile.jpg"
-                      height="150px"
-                      width="150px"
-                    />
-                    <h4>Lehana Ramkumar</h4>
-                    <p>
-                      <a href="mailto:lehanar57@tamu.edu">lehanar57@tamu.edu</a>
-                    </p>
-                  </div>
+              </div>
+              <div class="grow">
+                <div id="webmaster" class="contactCard">
+                  <h3>Webmaster</h3>
+                  <img
+                    src="assets/lehanaprofile.jpg"
+                    height="150px"
+                    width="150px"
+                  />
+                  <h4><a href="mailto:lehanar57@tamu.edu">Lehana Ramkumar</a></h4>
+                  <h6>lehanar57@tamu.edu</h6>
+                  <p>
+                    
+                  </p>
                 </div>
-                <div class="grow">
-                  <div id="tara" class="contactCard">
-                    <h3>Advisor</h3>
-                    <img
-                      src="assets/taraprofile.jpg"
-                      height="150px"
-                      width="150px"
-                    />
-                    <h4>Tara Blasor</h4>
-                    <p>
-                      <a href="mailto:tblasor@mays.tamu.edu">tblasor@mays.tamu.edu</a>
-                    </p>
-                  </div>
+              </div>
+              <div class="grow">
+                <div id="tara" class="contactCard">
+                  <h3>Advisor</h3>
+                  <img
+                    src="assets/taraprofile.jpg"
+                    height="150px"
+                    width="150px"
+                  />
+                  <h4><a href="mailto:tblasor@mays.tamu.edu">Tara Blasor</a></h4>
+                  <h6>tblasor@mays.tamu.edu</h6>
+                  <p>
+                    
+                  </p>
                 </div>
               </div>
             </div>
