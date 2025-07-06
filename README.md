@@ -10,6 +10,7 @@ This contains the website for Percussion Studio: the only percussion organizatio
 * **Kunal Gupta** - *Maintenance* - [GunalKupta](https://github.com/GunalKupta)
 * **Caleb Lewis** - *Maintenance* - [CalebLewis0917](https://github.com/CalebLewis0917)
 * **Lehana Ramkumar** - *Maintenance* - [kajubarfi1](https://github.com/kajubarfi1)
+* **Lucas Samson** - *Maintenance* - [lsamso](https://github.com/lsamso)
 
 See also the list of [contributors](https://github.com/tamupercussionstudio/tamupercussionstudio.github.io/graphs/contributors) who participated in this project.
 
