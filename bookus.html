@@ -17,70 +17,44 @@
     <title>Book Us - Texas A&M Percussion Studio</title>
     <link rel="icon" href="assets/webIcon.png" />
     <link href="css/auxiliarypages.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
     <script type="text/javascript" src="js/scripts.js" defer></script>
   </head>
-  <body>
-    <div id="navHeader" onclick="toggleNav()">
-      <input type="image" id="stick1" src="assets/drumstickBlack.png" />
-      <input type="image" id="stick2" src="assets/drumstickBlack.png" />
-      <p id="menuLabel">MENU</p>
-      <div id="covidBanner">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" onclick="closeBanner();event.cancelBubble=true;"class="icon icon-tabler icon-tabler-x" width="4vh" height="4vh" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z"/>
-      <line x1="18" y1="6" x2="6" y2="18" />
-      <line x1="6" y1="6" x2="18" y2="18" />
-      </svg>
-      <a href="Spring2021.html" id="bannerText">Click here for ticket information and Spring 2021 updates</a> -->
+  <body id="bookusBody" onload="init()">
+ <nav id="navHeader">
+    <div class="navContainer"> 
+      <div class="navLogo">
+        <a href="index.html"><img src="assets/logo.png" alt="Percussion Studio Logo" /></a>
       </div>
+      <ul class="navMenu">
+        <li class="navItem">
+          <a href="index.html#about">About</a>
+          <ul class="dropdown">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#join">Join</a></li>
+            <li><a href="index.html#watch">Watch</a></li>
+            <li><a href="https://drive.google.com/drive/u/2/folders/0AKGXTc2eigXKUk9PVA">Members</a></li>
+          </ul>
+        </li>
+        <li class="navItem">
+          <a href="#">Donate</a>
+          <ul class="dropdown">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="alumni.html">Alumni</a></li>
+          </ul>
+        </li>
+        <li class="navItem"><a href="index.html#join">Join</a></li>
+        <li class="navItem"><a href="bookus.html">Book Us</a></li>
+      </ul>
     </div>
-    <div id="nav" style="visibility: hidden">
-      <div id="linkBar">
-        <div id="left" class="column">
-          <div class="link">
-            <a href="index.html#about">About</a>
-          </div>
-          <div class="link">
-            <a href="index.html#join">Join</a>
-          </div>
-          <div class="link">
-            <a href="index.html#watch">Watch</a>
-          </div>
-          <div class="link">
-            <a href="index.html#contact">Contact</a>
-          </div>
-        </div>
-        <div id="line"></div>
-        <div id="right" class="column">
-          <div class="link">
-            <a
-              href="https://secure.touchnet.com/C21490_ustores/web/classic/store_main.jsp?STOREID=452"
-              target="_blank"
-              >Shop</a
-            >
-          </div>
-          <div class="link">
-            <a href="donate.html">Donate</a>
-          </div>
-          <div class="link">
-            <a href="bookus.html">Book Us</a>
-          </div>
-          <div class="link">
-            <a
-              href="https://drive.google.com/drive/u/0/folders/0AKGXTc2eigXKUk9PVA"
-              >Members</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <main>
+  </nav>
+    <main style="padding-top: 40px;">
       <div id="bookUs">
         <div class="content">
           <div id="container">
             <div class="overlay">
               <h1>Book Us</h1>
-              <img src="assets/flagRoom.jpg" />
+              <img src="assets/gig_img.jpg" />
             </div>
             <div id="bookUsText" class="textBox">
               <p>
@@ -131,5 +105,14 @@
         </div>
       </footer>
     </main>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var nav = document.getElementById('navHeader');
+      if (nav) {
+        nav.style.visibility = 'visible';
+        nav.style.opacity = '1';
+      }
+    });
+  </script>
   </body>
 </html>
