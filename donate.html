@@ -1,507 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Percussion Studio Donation Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Global Styles */
-        :root {
-            --primary: #500000;
-            --primary-light: #6a1a1a;
-            --secondary: #f9f9f9;
-            --text: #333;
-            --light-text: #555;
-            --white: #f9f9f9;
-            --spacing-xs: 8px;
-            --spacing-sm: 16px;
-            --spacing-md: 24px;
-            --spacing-lg: 40px;
-            --border-radius: 12px;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color:linear-gradient(0deg, rgba(255,242,215,1) 0%, rgba(250,247,242,1) 40%);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: var(--spacing-md);
-        }
-        
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-        
-        a:hover {
-            color: var(--primary-light);
-            text-decoration: underline;
-        }
-        
-        /* Card Component */
-        .card {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            margin-bottom: var(--spacing-md);
-            padding: var(--spacing-md);
-        }
-        
-        /* Header Styles */
-        .hero {
-            background-color: var(--primary);
-            padding: var(--spacing-lg) 0;
-            color: var(--white);
-            text-align: center;
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero img {
-            max-width: 180px;
-            margin-bottom: var(--spacing-md);
-            border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            background-color: var(--white);
-            padding: var(--spacing-xs);
-        }
-        
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: var(--spacing-sm);
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Section Styles */
-        .section {
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .section-title {
-            position: relative;
-            color: var(--primary);
-            margin-bottom: var(--spacing-md);
-            padding-bottom: var(--spacing-xs);
-            font-size: 1.8rem;
-            text-align: center;
-            font-weight: 700;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary);
-            border-radius: 2px;
-        }
-        
-        /* Donation Options */
-        .donation-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-md);
-        }
-        
-        .donation-option {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-        
-        .donation-option:hover {
-            transform: translateY(-5px);
-        }
-        
-        .donation-option-header {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: var(--spacing-md);
-            text-align: center;
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-        
-        .donation-option-body {
-            padding: var(--spacing-md);
-            min-height: 220px;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .donation-option-body p {
-            margin-bottom: var(--spacing-md);
-            flex-grow: 1;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--primary);
-            color: var(--white);
-            border-radius: 6px;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: var(--primary-light);
-            transform: translateY(-2px);
-            text-decoration: none;
-            color: var(--white);
-        }
-        
-        /* Comparison Section */
-        .comparison-img {
-            max-width: 100%;
-            border-radius: var(--border-radius);
-            margin: var(--spacing-md) auto;
-            display: block;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* FAQ Section */
-        .faq-item {
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .faq-question {
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: var(--spacing-xs);
-            font-size: 1.2rem;
-        }
-        
-        .faq-answer {
-            margin-bottom: var(--spacing-md);
-            padding-left: var(--spacing-sm);
-            border-left: 3px solid var(--primary);
-        }
-        
-        /* Table Styles */
-        .table-container {
-            overflow-x: auto;
-            margin: var(--spacing-md) 0;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        th, td {
-            padding: 16px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-        
-        th {
-            background-color: var(--primary);
-            color: var(--white);
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-        
-        tr:last-child td {
-            border-bottom: none;
-        }
-        
-        tr:nth-child(even) td {
-            background-color: #f8f8f8;
-        }
-        
-        /* Footer Styles */
-        .footer {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: var(--spacing-lg) 0;
-            text-align: center;
-            margin-top: var(--spacing-lg);
-        }
-        
-        .footer a {
-            color: var(--white);
-            text-decoration: underline;
-        }
-        
-        .footer a:hover {
-            color: #ffcccc;
-        }
-        
-        .social-icons {
-            margin-top: var(--spacing-md);
-        }
-        
-        .social-icons a {
-            display: inline-block;
-            margin: 0 var(--spacing-xs);
-            font-size: 1.5rem;
-        }
-        
-        /* Highlight */
-        .highlight {
-            background-color: rgba(80, 0, 0, 0.1);
-            color: var(--primary);
-            padding: 2px 5px;
-            border-radius: 4px;
-            font-weight: 700;
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .donation-options {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Percussion Studio Donation Page</title>
+  <link rel="icon" href="assets/webIcon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="text/javascript" src="js/scripts.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    /* Reduce header sizes only on donate.html */
+    #aboutWrapper h1,
+    #aboutWrapper h3,
+    section h1,
+    section h3 {
+      font-size: 2.5vmax !important; /* half of 5vmax */
+    }
+    /* Make infoBox text larger only on donate.html */
+    .infoBox {
+      font-size: 1.5em !important;
+    }
+    /* Center the main body content */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 30000px; /* Adjust as needed for your design */
+    }
+    /* Ensure sections inside main are full width and centered */
+    main > section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    /* Optional: Center the aboutWrapper and its content */
+    #aboutWrapper {
+      width: 100%;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* This targets only tables in the Endowment Giving Options section */
+    #aboutWrapper table, 
+    #aboutWrapper th, 
+    #aboutWrapper td {
+      border: 1px solid #bbb;
+      border-collapse: collapse;
+    }
+
+    #aboutWrapper th, 
+    #aboutWrapper td {
+      padding: 16px;
+    }
+
+    #aboutWrapper table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="hero-content">
-            <img src="assets/webIcon.png" alt="Percussion Studio Logo">
-            <h1>Support Percussion Studio!</h1>
-        </div>
+  <!-- Navbar copied from index.html -->
+  <nav id="navHeader" style="position:fixed;top:0;left:0;width:100%;z-index:1000;">
+    <div class="navContainer"> 
+      <div class="navLogo">
+        <a href="index.html"><img src="assets/logo.png" alt="Percussion Studio Logo" /></a>
+      </div>
+      <ul class="navMenu">
+        <li class="navItem">
+          <a href="index.html#about">About</a>
+          <ul class="dropdown">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#join">Join</a></li>
+            <li><a href="index.html#watch">Watch</a></li>
+            <li><a href="https://drive.google.com/drive/u/2/folders/0AKGXTc2eigXKUk9PVA">Members</a></li>
+          </ul>
+        </li>
+        <li class="navItem">
+          <a href="#">Donate</a>
+          <ul class="dropdown">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="alumni.html">Alumni</a></li>
+          </ul>
+        </li>
+        <li class="navItem"><a href="index.html#join">Join</a></li>
+        <li class="navItem"><a href="bookus.html">Book Us</a></li>
+      </ul>
     </div>
-    
-    <div class="container">
-        <!-- Introduction -->
-        <div class="card">
+  </nav>
+
+  <main style="padding-top:90px;">
+    <!-- Donation Options -->
+    <section class="section parallax bg2">
+      <div id="aboutWrapper">
+        <div class="titleRow">
+          <h1>How You Can Help</h1>
+          <div class="bar"></div>
+        </div>
+        <div class="aboutRow" style="flex-wrap:wrap; gap:32px; justify-content:center;">
+          <div class="infoBox" style="max-width:400px;">
+            <h3><i class="fas fa-tree"></i> Lasting Legacy</h3>
             <p>
-                Percussion Studio was founded in 1999 and has run on student membership fees to cover our
-                costs every semester. As we all know, things have gotten more expensive since 1999, so we are
-                happy to have your support! Review the two options below for how you can support Percussion
-                Studio today:
+              A group of Former Percussion Studio Members has established an 
+              <span style="background:rgba(80,0,0,0.1);color:#d8a722;padding:2px 5px;border-radius:4px;font-weight:700;">ENDOWMENT</span>
+              through the Texas A&M Foundation, which directly benefits the studio. This endowment will continuously generate funds for Studio each year, forever.
             </p>
-        </div>
-        
-        <!-- Donation Options -->
-        <div class="section">
-            <h2 class="section-title">How You Can Help</h2>
-            <div class="donation-options">
-                <div class="donation-option">
-                    <div class="donation-option-header">
-                        <i class="fas fa-tree"></i> Lasting Legacy
-                    </div>
-                    <div class="donation-option-body">
-                        <p style="text-align: center; >
-                            A group of Former Percussion Studio Members has established an 
-                            <span class="highlight">ENDOWMENT</span> through the Texas A&M Foundation, 
-                            which directly benefits the studio. This endowment will continuously generate 
-                            funds for Studio each year, forever.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="donation-option">
-                    <div class="donation-option-header">
-                        <i class="fas fa-bolt"></i> Immediate Impact
-                    </div>
-                    <div class="donation-option-body">
-                        <p style="text-align: center; >
-                            We have identified immediate needs that you can make a cash 
-                            <span class="highlight">DONATION</span> towards, such as smaller equipment, 
-                            which will help to put on a banging show this semester!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Comparison Section -->
-        <div class="section">
-            <h2 class="section-title">Need Help Deciding?</h2>
-            <p class="text-center">Compare the options to see which one best fits your giving goals:</p>
-            <img src="assets/endowmentvsdonationcomparison.png" alt="Comparison of Endowment vs Donation" class="comparison-img">
-        </div>
-        
-        <!-- Endowment Details -->
-        <div class="section">
-            <h2 class="section-title">Endowment Giving Options</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th><i class="fas fa-hand-holding-usd"></i> Method</th>
-                            <th><i class="fas fa-info-circle"></i> Details</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong><i class="fas fa-check-circle"></i> BEST WAY:</strong><br>Write a check</td>
-                            <td>
-                                Write a check to "Texas A&M Foundation"<br>
-                                <strong>In the memo line:</strong> Acct #400-58956, Percussion Studio Excellent Excellence Endowment<br>
-                                Mail to: Texas A&M Foundation, 401 George Bush Drive, College Station, TX 77840
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong><i class="fas fa-credit-card"></i> Credit Card</strong></td>
-                            <td>
-                                Donate online at 
-                                <a href="http://give.am/PercussionStudioEndowment">give.am/PercussionStudioEndowment</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong><i class="fas fa-university"></i> Wire Transfer</strong></td>
-                            <td>
-                                Wire transfers are accepted. View 
-                                <a href="https://drive.google.com/file/d/1YmjdzTjBhCqvpPKCZ_ilNqxSLE-cmALl/view">instructions here</a>.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p style="text-align: center;>
-                <i class="fas fa-chart-line"></i> <a href="https://drive.google.com/drive/u/0/folders/1tQ9FvOtuYhPDnaUpVMSpi020eH_35haZ">Stock contributions</a> 
-                are also accepted, as well as other investments! Rather than list all those options, email 
-                <a href="mailto:percussionstudioalumni@gmail.com">percussionstudioalumni@gmail.com</a> and a former Percussion Studio member 
-                who set up the endowment can get you in touch with the right people.
+          </div>
+          <div class="infoBox" style="max-width:400px;">
+            <h3><i class="fas fa-bolt"></i> Immediate Impact</h3>
+            <p>
+              We have identified immediate needs that you can make a cash 
+              <span style="background:rgba(80,0,0,0.1);color:#d8a722;padding:2px 5px;border-radius:4px;font-weight:700;">DONATION</span>
+              towards, such as smaller equipment, which will help to put on a banging show this semester!
             </p>
+          </div>
         </div>
-        
-        <!-- FAQ Section -->
-        <div class="section">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            
-            <div class="card">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-question-circle"></i> What is an endowment?
-                    </div>
-                    <div class="faq-answer">
-                        Money held as an investment managed by the Texas A&M Foundation. The principal of the investment generates interest earnings. 
-                        Our endowment's stipulations will make sure the interest earnings are passed along to Percussion Studio, annually, for life. 
-                        Want more details on endowment? The folks at the Foundation do a good job of explaining it all 
-                        <a href="https://www.txamfoundation.com/News/You-Asked-What-is-an-Endowment.aspx">here.</a>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-question-circle"></i> How much are we trying to raise?
-                    </div>
-                    <div class="faq-answer">
-                        We are hoping to raise at least $75,000 in commitments for the endowment balance by the end of 2025. 
-                        This will generate around $3,000 in interest earnings for the organization per year. Again, for life.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-question-circle"></i> Why an endowment? And why are we trying to raise $75,000?
-                    </div>
-                    <div class="faq-answer">
-                        Percussion Studio bears more costs to operate than back when it was formed in 1999. Studio rents a climate-controlled storage unit 
-                        where they store their equipment and rehearse there. Studio owns their equipment now, and needs to repair it or replace it occasionally. 
-                        The goal of this endowment is to provide Studio additional support to cover these operational costs so that they will not cease to exist 
-                        because the current members cannot afford to keep it up on their own.
-                    </div>
-                </div>
-                
-                <img src="assets/studioexpenses.png" alt="Studio Expenses Breakdown" class="comparison-img">
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-question-circle"></i> What if I only have $10 to give?
-                    </div>
-                    <div class="faq-answer">
-                        Great, you can still donate it! Any amount helps us make progress towards the goal.
-                        <br><br>
-                        Does your company <a href="https://www.txamfoundation.com/ways-to-give/matching-gifts.aspx">match</a>? 
-                        Make them chip in too and double your contribution!
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-question-circle"></i> How do I know that Percussion Studio will not blow their endowment earnings on something dumb?
-                    </div>
-                    <div class="faq-answer">
-                        The staff advisor of Percussion Studio (AKA, the adult) oversees the money transfer and approves the expenditures 
-                        made by the organization with these funds. The advisor will ensure the funds are spent on the operational needs of the organization.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-question-circle"></i> What is Percussion Studio even up to these days?
-                    </div>
-                    <div class="faq-answer">
-                        The organization has 40 members and continues to work all semester towards a "big show" at Rudder Auditorium. 
-                        Members join the group through an audition process. They continue to play gigs and are the drumline at Aggie Women's Soccer games. 
-                        They also have social events like a hamburger cookout, formals, retreats, and other spontaneous shenanigans. 
-                        Check out their Instagram to get an idea.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-question-circle"></i> I still have questions.
-                    </div>
-                    <div class="faq-answer">
-                        Cool, send them to <a href="mailto:percussionstudioalumni@gmail.com">percussionstudioalumni@gmail.com</a> 
-                        and a former Percussion Studio member who helped establish the endowment will get back to you.
-                    </div>
-                </div>
-            </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section parallax bg2">
+      <div id="aboutWrapper">
+        <div class="titleRow">
+          <h1>Need Help Deciding?</h1>
+          <div class="bar"></div>
         </div>
-    </div>
-    
+        <div style="text-align:center; max-width:900px; margin:auto;">
+          <div class="infoBox" style="max-width:400px; margin:auto;">
+            <h4>
+                Compare the options to see which one best fits your giving goals:</h3>
+          </div>
+          <img src="assets/endowmentvsdonationcomparison.png" alt="Comparison of Endowment vs Donation" style="max-width:100%;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);margin:24px auto;">
+        </div>
+      </div>
+    </section>
+
+    <!-- Endowment Details -->
+    <section class="section parallax bg2">
+      <div id="aboutWrapper">
+        <div class="titleRow">
+          <h1>Endowment Giving Options</h1>
+          <div class="bar"></div>
+        </div>
+        <div class="infoBox" style="max-width:900px; margin:auto;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr>
+                <th style="background:#311111;color:white;padding:16px;">Method</th>
+                <th style="background:#311111;color:white;padding:16px;">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong><i class="fas fa-check-circle"></i> BEST WAY:</strong><br>Write a check</td>
+                <td>
+                  Write a check to "Texas A&M Foundation"<br>
+                  <strong>In the memo line:</strong> Acct #400-58956, Percussion Studio Excellent Excellence Endowment<br>
+                  Mail to: Texas A&M Foundation, 401 George Bush Drive, College Station, TX 77840
+                </td>
+              </tr>
+              <tr>
+                <td><strong><i class="fas fa-credit-card"></i> Credit Card</strong></td>
+                <td>
+                  Donate online at 
+                  <a href="http://give.am/PercussionStudioEndowment">give.am/PercussionStudioEndowment</a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong><i class="fas fa-university"></i> Wire Transfer</strong></td>
+                <td>
+                  Wire transfers are accepted. View 
+                  <a href="https://drive.google.com/file/d/1YmjdzTjBhCqvpPKCZ_ilNqxSLE-cmALl/view">instructions here</a>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="text-align:center;margin-top:16px;">
+            <i class="fas fa-chart-line"></i> <a href="https://drive.google.com/drive/u/0/folders/1tQ9FvOtuYhPDnaUpVMSpi020eH_35haZ">Stock contributions</a> 
+            are also accepted, as well as other investments! Rather than list all those options, email 
+            <a href="mailto:percussionstudioalumni@gmail.com">percussionstudioalumni@gmail.com</a> and a former Percussion Studio member 
+            who set up the endowment can get you in touch with the right people.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section parallax bg2">
+      <div id="aboutWrapper">
+        <div class="titleRow">
+          <h1>Frequently Asked Questions</h1>
+          <div class="bar"></div>
+        </div>
+        <div class="infoBox" style="max-width:900px; margin:auto;">
+          <h3><i class="fas fa-question-circle"></i> What is an endowment?</h3>
+          <p>
+            Money held as an investment managed by the Texas A&M Foundation. The principal of the investment generates interest earnings. 
+            Our endowment's stipulations will make sure the interest earnings are passed along to Percussion Studio, annually, for life. 
+            Want more details on endowment? The folks at the Foundation do a good job of explaining it all 
+            <a href="https://www.txamfoundation.com/News/You-Asked-What-is-an-Endowment.aspx">here.</a>
+          </p>
+          <h3><i class="fas fa-question-circle"></i> How much are we trying to raise?</h3>
+          <p>
+            We are hoping to raise at least $75,000 in commitments for the endowment balance by the end of 2025. 
+            This will generate around $3,000 in interest earnings for the organization per year. Again, for life.
+          </p>
+          <h3><i class="fas fa-question-circle"></i> Why an endowment? And why are we trying to raise $75,000?</h3>
+          <p>
+            Percussion Studio bears more costs to operate than back when it was formed in 1999. Studio rents a climate-controlled storage unit 
+            where they store their equipment and rehearse there. Studio owns their equipment now, and needs to repair it or replace it occasionally. 
+            The goal of this endowment is to provide Studio additional support to cover these operational costs so that they will not cease to exist 
+            because the current members cannot afford to keep it up on their own.
+          </p>
+          <img src="assets/studioexpenses.png" alt="Studio Expenses Breakdown" style="max-width:100%;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);margin:24px auto;">
+          <h3><i class="fas fa-question-circle"></i> What if I only have $10 to give?</h3>
+          <p>
+            Great, you can still donate it! Any amount helps us make progress towards the goal.
+            <br><br>
+            Does your company <a href="https://www.txamfoundation.com/ways-to-give/matching-gifts.aspx">match</a>? 
+            Make them chip in too and double your contribution!
+          </p>
+          <h3><i class="fas fa-question-circle"></i> How do I know that Percussion Studio will not blow their endowment earnings on something dumb?</h3>
+          <p>
+            The staff advisor of Percussion Studio (AKA, the adult) oversees the money transfer and approves the expenditures 
+            made by the organization with these funds. The advisor will ensure the funds are spent on the operational needs of the organization.
+          </p>
+          <h3><i class="fas fa-question-circle"></i> What is Percussion Studio even up to these days?</h3>
+          <p>
+            The organization has 40 members and continues to work all semester towards a "big show" at Rudder Auditorium. 
+            Members join the group through an audition process. They continue to play gigs and are the drumline at Aggie Women's Soccer games. 
+            They also have social events like a hamburger cookout, formals, retreats, and other spontaneous shenanigans. 
+            Check out their Instagram to get an idea.
+          </p>
+          <h3><i class="fas fa-question-circle"></i> I still have questions.</h3>
+          <p>
+            Cool, send them to <a href="mailto:percussionstudioalumni@gmail.com">percussionstudioalumni@gmail.com</a> 
+            and a former Percussion Studio member who helped establish the endowment will get back to you.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
-    <div class="footer">
-        <div class="container">
-            <p>
-                Questions? Email us at 
-                <a href="mailto:percussionstudioalumni@gmail.com">percussionstudioalumni@gmail.com</a>
-            </p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
+    <footer>
+      <div id="copyright">
+        <h3>&copy 2024 Percussion Studio</h3>
+      </div>
+      <div class="socialBubbles">
+        <div id="facebook">
+          <a href="https://www.facebook.com/PercussionStudio/">
+            <img src="assets/f_logo_RGB-Blue_1024.png"/>
+          </a>
         </div>
-    </div>
+        <div id="instagram">
+          <a href="https://www.instagram.com/tamupercussionstudio/">
+            <img src="assets/Instagram_AppIcon_Aug2017.png"/>
+          </a>
+        </div>
+        <div id="twitter">
+          <a href="https://twitter.com/tamupercstud">
+            <img src="assets/Twitter_Social_Icon_Circle_Color.png"/>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </main>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var nav = document.getElementById('navHeader');
+    if (nav) {
+      nav.style.visibility = 'visible';
+      nav.style.opacity = '1';
+    }
+  });
+  </script>
 </body>
 </html>

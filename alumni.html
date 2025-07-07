@@ -4,85 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Percussion Studio Former Members</title>
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: rgb(255,242,215);
-            background: linear-gradient(0deg, rgba(255,242,215,1) 0%, rgba(250,247,242,1) 40%);
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: rgb(255,242,215);
-            background: linear-gradient(0deg, rgba(255,242,215,1) 0%, rgba(250,247,242,1) 40%);
-            padding: 20px 30px;
-            border-radius: 8px;
-
-        }
-
-        /* Header Styles */
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .header img {
-            max-width: 90%; /* Ensures image doesn't exceed container width */
-            height: auto;
-            border-radius: 8px;
-            margin: 0 auto;
-            display: block; /* Centers the image */
-        }
-        .header h1 {
-            color: #500000;
-            font-size: 2.2rem;
-            margin-top: 10px;
-        }
-
-        /* Section Styles */
-        .section {
-            margin-bottom: 30px;
-        }
-        .section h2 {
-            color: #500000;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        .section p {
-            margin: 10px 0;
-        }
-        .section a {
-            color: #310101;
-            font-weight: 700;
-            text-decoration: none;
-        }
-        .section a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer Styles */
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #555;
-        }
-    </style>
+    <link rel="icon" href="assets/webIcon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/scripts.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <div class="header">
-            <img src="assets/webIcon.png" alt="Percussion Studio Logo">
-            <h1>Former Members</h1>
+    <nav id="navHeader">
+      <div class="navContainer"> 
+        <div class="navLogo">
+          <a href="index.html"><img src="assets/logo.png" alt="Percussion Studio Logo" /></a>
         </div>
-        
-        <!-- Main Content Section -->
-        <div class="section">
+        <ul class="navMenu">
+          <li class="navItem">
+            <a href="index.html#about">About</a>
+            <ul class="dropdown">
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#join">Join</a></li>
+              <li><a href="index.html#watch">Watch</a></li>
+              <li><a href="https://drive.google.com/drive/u/2/folders/0AKGXTc2eigXKUk9PVA">Members</a></li>
+            </ul>
+          </li>
+          <li class="navItem">
+            <a href="donate.html">Donate</a>
+            <ul class="dropdown">
+              <li><a href="donate.html">Donate</a></li>
+              <li><a href="alumni.html">Alumni</a></li>
+            </ul>
+          </li>
+          <li class="navItem"><a href="index.html#join">Join</a></li>
+          <li class="navItem"><a href="bookus.html">Book Us</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main style="padding-top: 100px;"> 
+      <section class="section parallax bg2">
+        <div id="aboutWrapper">
+          <div class="titleRow">
+            <h1>Former Members</h1>
+            <div class="bar"></div>
+          </div>
+          <div class="infoBox" style="max-width:700px;margin:auto;font-size: 30px;">
             <p>
                 Were you a member of Percussion Studio back in the day? Do you want to keep in touch with how the organization is doing? 
                 Do you want to reconnect with friends from your studio days? 
@@ -96,22 +57,45 @@
                 Studio needs our help! Check out the ways you can help 
                 <a href="https://www.tamupercussionstudio.com/donate.html">here</a>.
             </p>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="section">
             <p>
                 Questions? Just want to say Howdy? Send an email to 
                 <a href="mailto:percussionstudioalumni@gmail.com">percussionstudioalumni@gmail.com</a> and a former perc stud will get back to you.
             </p>
+          </div>
         </div>
-
-        <!-- Footer Section -->
-        <div class="footer">
-            <p>
-                © 2024 Percussion Studio Alumni Network. All rights reserved.
-            </p>
+      </section>
+      <footer>
+        <div id="copyright">
+          <h3>&copy 2024 Percussion Studio</h3>
         </div>
-    </div>
+        <div class="socialBubbles">
+          <div id="facebook">
+            <a href="https://www.facebook.com/PercussionStudio/">
+              <img src="assets/f_logo_RGB-Blue_1024.png"/>
+            </a>
+          </div>
+          <div id="instagram">
+            <a href="https://www.instagram.com/tamupercussionstudio/">
+              <img src="assets/Instagram_AppIcon_Aug2017.png"/>
+            </a>
+          </div>
+          <div id="twitter">
+            <a href="https://twitter.com/tamupercstud">
+              <img src="assets/Twitter_Social_Icon_Circle_Color.png"/>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script>
+      // Ensure navbar is always visible on this page
+      document.addEventListener("DOMContentLoaded", function() {
+        var nav = document.getElementById('navHeader');
+        if (nav) {
+          nav.style.visibility = 'visible';
+          nav.style.opacity = '1';
+        }
+      });
+    </script>
 </body>
 </html>
