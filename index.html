@@ -25,26 +25,17 @@
         <div class="navLogo">
           <a href="index.html"><img src="assets/logo.png" alt="Percussion Studio Logo" /></a>
         </div>
+        <button class="navToggle" aria-label="Toggle navigation">&#9776;</button>
         <ul class="navMenu">
-          <li class="navItem">
-            <a href="#about">About</a>
-            <ul class="dropdown">
-              <li><a href="#about">About</a></li>
-              <li><a href="#join">Join</a></li>
-              <li><a href="#watch">Watch</a></li>
-              <li><a href="https://drive.google.com/drive/u/2/folders/0AKGXTc2eigXKUk9PVA">Members</a></li>
-            </ul>
-          </li>
-          <li class="navItem">
-            <a href="donate.html">Donate</a>
-            <ul class="dropdown">
-              <li><a href="donate.html">Donate</a></li>
-              <li><a href="alumni.html">Alumni</a></li>
-            </ul>
-          </li>
+          <li class="navItem"><a href="#about">About</a></li>
           <li class="navItem"><a href="#join">Join</a></li>
+          <li class="navItem"><a href="#watch">Watch</a></li>
+          <li class="navItem"><a href="https://drive.google.com/drive/u/2/folders/0AKGXTc2eigXKUk9PVA">Members</a></li>
+          <li class="navItem"><a href="donate.html">Donate</a></li>
+          <li class="navItem"><a href="alumni.html">Alumni</a></li>
           <li class="navItem"><a href="bookus.html">Book Us</a></li>
         </ul>
+
       </div>
     </nav>
 
@@ -156,13 +147,13 @@
                   </p>
                   
                    <p>
-                    Our First Spring 2025 informational will be held
-                    <b>on Wednesday, January 22nd at 6:30 PM</b> on Zoom. Meet
+                    Our First Fall 2025 informational will be held
+                    <b>During the school year</b> on Zoom. Meet
                     us
                     <a href="Https://tamu.zoom.us/j/98072214423" target="_blank"
                       >here. </a
-                    
-                  </p> 
+                    >
+                  </p>
                   <p>
                     <b>Ready to join for Spring 2025?</b>
                     <a
@@ -312,7 +303,19 @@
 
               <br />
             </div>
-            <div class="slideshow-container">
+              <div class="mySlides fade" style="display: block">
+                <iframe
+                  class="iframeSize"
+                  src="https://www.youtube.com/embed/YMazKG0LaTM?si=Ft3DfXg8bKQYFBzo"
+                  loading="lazy"
+                  title="Galactic Grooves"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+                <div class="text">Spring '25</div>
+              </div>
+                          <div class="slideshow-container">
               <!-- Full-width images with number and caption text -->
               <div class="mySlides fade" style="display: block">
                 <iframe
@@ -326,27 +329,10 @@
                 <div class="text">Spring '21</div>
               </div>
               <div class="mySlides fade" style="display: block">
-                <iframe
-                  class="iframeSize"
-                  src="https://www.youtube.com/embed/YMazKG0LaTM?si=Ft3DfXg8bKQYFBzo"
-                  loading="lazy"
-                  title="Galactic Grooves"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-                <div class="text">Spring '25</div>
-              </div>
-              <div class="mySlides fade" style="display: block">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/ye-_0oQNkmQ?si=krmJFN-gzw0UdnlW&amp;start=509" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="text">Fall '23</div>
               </div>
               <div class="mySlides fade" style="display: block">
-                <!-- <p>
-                  Click
-                  <a href="assets/RhythmicRewind.pdf" target="_blank">here</a>
-                  for the program for the show!
-                </p> -->
                 <iframe
                   class="iframeSize"
                   src="https://www.youtube.com/embed/nBNoJlWhOEU"
@@ -629,5 +615,16 @@
         </div>
       </footer>
     </main>
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var navToggle = document.querySelector('.navToggle');
+    var navMenu = document.querySelector('.navMenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('show');
+      });
+    }
+  });
+</script>
   </body>
 </html>

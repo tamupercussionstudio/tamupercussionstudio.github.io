@@ -128,14 +128,19 @@ h1 {
 #navHeader {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 70px;
   background-color: #311111;
   color: white;
   z-index: 10;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
   transition: opacity 0.5s ease-in-out;
   font-family: "Roboto", sans-serif;
+  transition: all 0.3s ease-in-out;	
+
 }
 
 .navContainer {
@@ -155,14 +160,17 @@ h1 {
   display: flex;
   flex-grow: 1;
   justify-content: space-around;
-  margin: 0;
+  margin: 0;	
   padding: 0;
-	height: 100%;
+  height: 100%;
+  background: #311111; /* dark, like your header */
 }
 
 .navItem {
   position: relative;
-	padding: 30px;
+	margin: 0;
+	padding-top: 20px;
+
 }
 
 .navItem a {
@@ -819,4 +827,105 @@ footer .socialBubbles img {
 	width: auto;
 	margin-left: 10px;
 	margin-right: 10px;
+}
+
+/* Responsive navbar styles */
+@media (max-width: 800px) {
+  .navContainer {
+    flex-direction: row;
+    align-items: center;
+	justify-content: space-between;
+    height: 100%;
+    padding: 0 8px;
+  }
+  .navMenu {
+    flex-direction: row;
+	flex-wrap: wrap;
+    width: 100vw;
+    display: none; /* Hide menu by default on mobile */
+    background: #311111;
+    position: absolute;
+    top: 60px; /* height of navbar */
+    left: 0;
+    z-index: 1001;
+	padding: 0; /* Reset padding for mobile */
+	margin: 0; /* Reset margin for mobile */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+	
+  }
+  .navMenu.show {
+    display: flex;
+  }
+  .navItem {
+    margin: 0;
+    width: 20%;
+	padding: 0; /* Reset padding for mobile */
+	font-size: 8px;
+  }
+  .navItem > a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px; /* Adjust padding for mobile */
+	font-size: 1.25em; /* Adjust font size for mobile */
+  }
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    min-width: 100%;
+  }
+  .navToggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2em;
+    margin: 16px;
+    cursor: pointer;
+    color: #311111;
+  }
+}
+
+.navToggle {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .navToggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2em;
+    margin: 16px;
+    cursor: pointer;
+    color: white; /* Ensures visibility on dark background */
+  }
+}
+
+
+@media (max-width: 800px) {
+  .navLogo img {
+    height: 25px; /* or 35px, depending on your preference */
+  }
+}
+
+@media (max-width: 800px) {
+  .infoBox {
+    width: 95vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+  }
+
+  .infoBox p {
+    font-size: 0.45em; /* Optional: slightly larger text for readability */
+  }
+
+  .infoBox table,
+  .infoBox th,
+  .infoBox td {
+    font-size: .62em; /* Optional: slightly larger text for readability */		
+  }
+
 }
