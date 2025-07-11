@@ -10,6 +10,9 @@ function init() {
 //   bannerClosed = true;
 // }
 
+
+
+
 if (window.location.href == 'https://www.tamupercussionstudio.com/' || window.location.href.includes('#') || window.location.href.includes('index.html')) {
 	//Stick overlay displacement to fit screen
 	var panel1 = document.getElementById('panel1');

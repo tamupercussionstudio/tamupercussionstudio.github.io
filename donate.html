@@ -66,33 +66,24 @@
 </head>
 <body>
   <!-- Navbar copied from index.html -->
-  <nav id="navHeader" style="position:fixed;top:0;left:0;width:100%;z-index:1000;">
-    <div class="navContainer"> 
-      <div class="navLogo">
-        <a href="index.html"><img src="assets/logo.png" alt="Percussion Studio Logo" /></a>
+  <nav id="navHeader">
+      <div class="navContainer"> 
+        <div class="navLogo">
+          <a href="index.html"><img src="assets/logo.png" alt="Percussion Studio Logo" /></a>
+        </div>
+        <button class="navToggle" aria-label="Toggle navigation">&#9776;</button>
+        <ul class="navMenu">
+          <li class="navItem"><a href="index.html">About</a></li>
+          <li class="navItem"><a href="index.html#join">Join</a></li>
+          <li class="navItem"><a href="index.html#watch">Watch</a></li>
+          <li class="navItem"><a href="https://drive.google.com/drive/u/2/folders/0AKGXTc2eigXKUk9PVA">Members</a></li>
+          <li class="navItem"><a href="donate.html">Donate</a></li>
+          <li class="navItem"><a href="alumni.html">Alumni</a></li>
+          <li class="navItem"><a href="bookus.html">Book Us</a></li>
+        </ul>
+
       </div>
-      <ul class="navMenu">
-        <li class="navItem">
-          <a href="index.html#about">About</a>
-          <ul class="dropdown">
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#join">Join</a></li>
-            <li><a href="index.html#watch">Watch</a></li>
-            <li><a href="https://drive.google.com/drive/u/2/folders/0AKGXTc2eigXKUk9PVA">Members</a></li>
-          </ul>
-        </li>
-        <li class="navItem">
-          <a href="#">Donate</a>
-          <ul class="dropdown">
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="alumni.html">Alumni</a></li>
-          </ul>
-        </li>
-        <li class="navItem"><a href="index.html#join">Join</a></li>
-        <li class="navItem"><a href="bookus.html">Book Us</a></li>
-      </ul>
-    </div>
-  </nav>
+    </nav>
 
   <main style="padding-top:90px;">
     <!-- Donation Options -->
@@ -280,4 +271,15 @@
   });
   </script>
 </body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var navToggle = document.querySelector('.navToggle');
+    var navMenu = document.querySelector('.navMenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('show');
+      });
+    }
+  });
+</script>
 </html>
