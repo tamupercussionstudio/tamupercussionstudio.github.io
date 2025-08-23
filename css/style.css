@@ -339,7 +339,10 @@ h1 {
 .aboutRow {
 	display: flex;
 	justify-content: space-between;
-	padding: 2% 10% 2% 10%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	padding-left: 10%;
+	padding-right: 10%;
 }
 
 .bar {
@@ -395,7 +398,7 @@ h1 {
 
 #about img {
 	height: auto;
-	max-width: 45%;
+	max-width: 70%;
 }
 
 #about p {
@@ -928,4 +931,53 @@ footer .socialBubbles img {
     font-size: .62em; /* Optional: slightly larger text for readability */		
   }
 
+}
+
+/* Add to your CSS file */
+.photoGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.photoRow {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.photoRow img.aspect43 {
+  aspect-ratio: 4 / 3;
+  width: 300px; /* Adjust as needed */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.photoRow:last-child img.aspect43 {
+  width: 620px; /* Make the bottom photo span the width of the two above */
+  max-width: 95vw;
+}
+
+
+
+@media (max-width: 700px) {
+  .photoGrid {
+    gap: 10px;
+  }
+  .photoRow {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  .photoRow img.aspect43 {
+    width: 99vw;
+    max-width: 99vw;
+    aspect-ratio: 4 / 3;
+  }
+  .photoRow:last-child img.aspect43 {
+    width: 99vw;
+    max-width: 99vw;
+  }
 }
